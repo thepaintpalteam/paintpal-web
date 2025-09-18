@@ -5,27 +5,22 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const menus = [
-  {
-    name: "Features",
-    route: "/",
-  },
-  {
-    name: "How it works",
-    route: "/",
-  },
-  {
-    name: "Pricing",
-    route: "/",
-  },
- 
+  { name: "Features", id: "features" },
+  { name: "How it works", id: "how-it-works" },
+  { name: "Pricing", id: "pricing" },
 ];
 
-
+const handleScroll = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className=" py-2 lg:max-w-[1400px] lg:mx-auto  ">
@@ -36,28 +31,35 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-         <div className="flex items-center gap-6">
-              <ul className="hidden md:flex items-start gap-8 font-medium">
-                {menus.map((menu, index) => (
-                  <div key={index} className="relative">
-                    <div className="flex items-center gap-2 cursor-pointer ">
-                      <li className="py-1 text-lg font-medium">{menu.name}</li>
-                    </div>
-                  </div>
-                ))}
-              </ul>
+        <div className="flex items-center gap-6">
+          <ul className="hidden md:flex items-start gap-8 font-medium">
+            {menus.map((menu, index) => (
+              <div key={index} className="relative">
+                <div className="flex items-center gap-2 cursor-pointer ">
+                  <li
+                    key={index}
+                    onClick={() => handleScroll(menu.id)}
+                    className="py-1 text-lg font-medium"
+                  >
+                    {menu.name}
+                  </li>
+                </div>
+              </div>
+            ))}
+          </ul>
         </div>
-
 
         <div className="flex items-center gap-4">
           <div className="flex items-center  lg:gap-8 cursor-pointer group">
-           
             <div className="flex items-center gap-4">
-              <button onClick={() => navigate('/login')} className="bg-white border border-gray-300 lg:w-32 py-3 font-medium px-4 text-lg  rounded-lg ">
+              <button
+                onClick={() => navigate("/login")}
+                className="bg-white border border-gray-300 lg:w-32 py-3 font-medium px-4 text-lg  rounded-lg "
+              >
                 Login
               </button>
               <button className="bg-[#5FBF92] py-3 hidden lg:block font-medium  px-4 text-lg  rounded-lg ">
-                Get started 
+                Get started
               </button>
               <div
                 className="lg:hidden block cursor-pointer"

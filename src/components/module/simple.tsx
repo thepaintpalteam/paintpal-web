@@ -3,7 +3,7 @@ import logo from "../../assets/paintpal/images/logo2.png";
 
 const Simple = () => {
   return (
-    <div className="mt-16 pb-16 mx-4 lg:max-w-[1300px] lg:mx-auto ">
+    <div id="how-it-works" className="mt-16 pb-16 mx-4 lg:max-w-[1300px] lg:mx-auto ">
       {/* Title */}
       <div>
         <h1 className="text-2xl md:text-3xl lg:text-4xl text-center font-semibold text-gray-900">

@@ -6,7 +6,7 @@ const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState("yearly");
 
   return (
-    <div className="lg:-mt-64 py-6 mx-4 lg:mx-auto lg:max-w-[1300px] ">
+    <div id="pricing" className="lg:-mt-64 py-6 mx-4 lg:mx-auto lg:max-w-[1300px] ">
       {/* Heading */}
       <h1 className="text-lg text-gray-900">
         <span className="text-[#5FBF92]">Save from 16%</span> with yearly

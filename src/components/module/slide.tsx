@@ -8,7 +8,7 @@ const slides = [ slide_one, slide_two,  slide_three, slide_four];
 
 const Slide = () => {
   return (
-    <div className="mt-10 -mb-10 lg:-mb-44 mx-4 lg:mx-auto lg:max-w-[1400px]">
+    <div className="mt-10 -mb-10 lg:-mb-[700px] mx-4 lg:mx-auto lg:max-w-[1300px]">
       {/* Text Header */}
       <div className="flex flex-wrap items-end justify-between mb-10 ">
         <div>
@@ -30,14 +30,17 @@ const Slide = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`flex-shrink-0  h-[100vh] lg:h-[1900px]  transition-all duration-700 ease-in-out ${
-              index === 0 ? "w-[500px] lg:w-[1200px]  " : "w-[500px] lg:w-[1200px] "
+                className={`flex-shrink-0  h-[120vh] lg:h-[1900px]  transition-all duration-700 ease-in-out ${
+              index === 0 ? "w-[500px] lg:w-[800px]  " : "w-[500px] lg:w-[800px] "
             }`}
+            // className={`flex-shrink-0  h-[100vh] lg:h-[1900px]  transition-all duration-700 ease-in-out ${
+            //   index === 0 ? "w-[500px] lg:w-[1200px]  " : "w-[500px] lg:w-[1200px] "
+            // }`}
           >
             <img
               src={slide}
               alt={`Slide ${index + 1}`}
-              className="w-full object-cover "
+              className="w-full  object-cover "
             />
           </div>
         ))}

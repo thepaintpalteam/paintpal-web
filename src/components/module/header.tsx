@@ -32,7 +32,7 @@ const Header = () => {
         <img
           src={header}
           alt="PaintPal header"
-          className="lg:w-[1500px] h-auto rounded-lg object-cover"
+          className="lg:w-[1300px] h-auto rounded-lg object-cover"
         />
       </div>
     </div>

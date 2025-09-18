@@ -1,7 +1,7 @@
 import { useState } from "react";
-import authlogo from "../../assets/paintpal/images/authlogo2.png";
 import { Calendar, Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import authheader from "../../assets/paintpal/images/authheader.mp4";
 
 const SignUp = () => {
   const [type, setType] = useState("text");
@@ -14,11 +14,18 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg">
-        {/* Logo */}
-        <div>
-          <div className="bg-gradient-to-b from-[#FEAF1E] via-[#FEAF1E] to-[#FEAF1E] p-10 rounded-t-xl shadow-md flex items-center justify-center">
-            <img src={authlogo} alt="Auth Logo" className="w-36" />
-          </div>
+        
+         {/* Video Header */}
+        <div className="relative w-full h-48">
+          <video
+            src={authheader}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover rounded-t-xl "
+          />
+          {/* Optional dark overlay */}
         </div>
 
         {/* Header */}

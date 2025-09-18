@@ -6,8 +6,8 @@ const JoinCall = () => {
   const navigate = useNavigate();
 
   // States
-  const [videoOn, setVideoOn] = useState(true);
-  const [micOn, setMicOn] = useState(true);
+  const [videoOn, setVideoOn] = useState(false);
+  const [micOn, setMicOn] = useState(false);
   const [volume, setVolume] = useState(50);
 
   return (
@@ -15,7 +15,7 @@ const JoinCall = () => {
       <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg">
         {/* Header */}
         <div className="mt-3 mx-6 py-4">
-          <p className="text-gray-500 mt-1">£5.99</p>
+          {/* <p className="text-gray-500 mt-1">£5.99</p> */}
           <h2 className="text-2xl font-semibold text-gray-800">Event price</h2>
         </div>
 

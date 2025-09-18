@@ -1,20 +1,33 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import authlogo from "../../assets/paintpal/images/authlogo2.png";
 import { useNavigate } from "react-router-dom";
+import authheader from "../../assets/paintpal/images/authheader.mp4";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-2xl   rounded-xl shadow-lg">
+        {/* Video Header */}
+        <div className="relative w-full h-48">
+          <video
+            src={authheader}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover rounded-t-xl "
+          />
+          {/* Optional dark overlay */}
+        </div>
+
         {/* Logo */}
-        <div>
+        {/* <div>
           <div className="bg-gradient-to-b from-[#FEAF1E] via-[#FEAF1E] to-[#FEAF1E] p-10 rounded-t-xl shadow-md flex items-center justify-center">
             <img src={authlogo} alt="Auth Logo" className="w-36" />
           </div>
-        </div>
+        </div> */}
 
         {/* Header */}
         <div className=" mt-3 px-6 py-4 ">
@@ -25,7 +38,7 @@ const Login = () => {
         </div>
 
         {/* Form */}
-        <form className=" space-y-8 px-6 pb-6 mt-4">
+        <form className="space-y-8 px-6 pb-6 mt-4">
           {/* <div className="relative">
             <input
               type="text"
@@ -72,7 +85,13 @@ const Login = () => {
 
             {/* Forgot password */}
             <div className="mt-2">
-              <button  onClick={() => {navigate('/forgot-password'); scrollTo(0,0)}}  className="text-md text-gray-500">
+              <button
+                onClick={() => {
+                  navigate("/forgot-password");
+                  scrollTo(0, 0);
+                }}
+                className="text-md text-gray-500"
+              >
                 Forgot your password?
               </button>
             </div>
@@ -86,7 +105,7 @@ const Login = () => {
             Login
           </button>
 
-          <div className="flex items-center justify-center gap-3 py-4 ">
+          <div className="flex items-center justify-center gap-3  ">
             <div className="border w-6"></div>
             <span className="text-gray-600">OR</span>
             <div className="border w-6"></div>
@@ -95,26 +114,32 @@ const Login = () => {
           <span className="text-center flex items-center justify-center text-gray-600 text-md">
             Login with
           </span>
-          <button
-            type="button"
-            className="w-full border-2 border-[#5FBF92] py-3 rounded-lg font-semibold text-gray-700 flex items-center justify-center gap-2 hover:bg-gray-50"
-          >
-            <img
-              src="https://www.svgrepo.com/show/355037/google.svg"
-              alt="Google"
-              className="w-5 h-5"
-            />
-            Gmail
-          </button>
 
-          {/* Join as Guest */}
-          <button
-            type="button"
-            onClick={() => {navigate('/joinasguest'); scrollTo(0,0)}}
-            className="w-full bg-gray-900 text-white py-3 rounded-lg  transition"
-          >
-            Join as a Guest
-          </button>
+          <div className="flex flex-col gap-3">
+            <button
+              type="button"
+              className="w-full border-2 border-[#5FBF92] py-3 rounded-lg font-semibold text-gray-700 flex items-center justify-center gap-2 hover:bg-gray-50"
+            >
+              <img
+                src="https://www.svgrepo.com/show/355037/google.svg"
+                alt="Google"
+                className="w-5 h-5"
+              />
+              Gmail
+            </button>
+
+            {/* Join as Guest */}
+            <button
+              type="button"
+              onClick={() => {
+                navigate("/joinasguest");
+                scrollTo(0, 0);
+              }}
+              className="w-full bg-gray-900 text-white py-3 rounded-lg  transition"
+            >
+              Join as a Guest
+            </button>
+          </div>
         </form>
       </div>
     </div>

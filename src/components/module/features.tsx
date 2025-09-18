@@ -11,7 +11,7 @@ import video from '../../assets/paintpal/svgs/video.svg'
 const Features = () => {
   const navigate = useNavigate()
   return (
-    <div className=" py-16 mx-4 lg:mx-auto lg:max-w-[1400px]  ">
+    <div className="lg:mb-64 mt-24 py-16 mx-4 lg:mx-auto lg:max-w-[1300px]  ">
       <h1 className="text-4xl  font-semibold text-gray-900">Our features</h1>
 
       <div className="mt-16 space-y-10 ">

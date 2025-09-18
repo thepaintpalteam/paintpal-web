@@ -71,7 +71,7 @@ const Yearly = () => {
   return (
     <div className="lg:py-16 lg:mx-auto lg:max-w-[1500px] lg:px-6">
       {/* Pricing grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {plans.map((plan, idx) => (
           <div key={idx} className="rounded-lg flex border flex-col">
             {/* Header */}

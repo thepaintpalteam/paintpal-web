@@ -1,12 +1,13 @@
 import { Check, X } from "lucide-react";
 import crown from "../../../assets/paintpal/svgs/crown.svg";
+import { useNavigate } from "react-router-dom";
 
 const plans = [
   {
     name: "PaintPal Free",
     description:
       "Design anything and bring your ideas to life. No cost, just creativity",
-    price: "US$0",
+    price: "GBP £0",
     priceDesc: "/year for one person",
     buttonText: "Get started",
     buttonStyle: "bg-gray-500 text-white",
@@ -28,7 +29,7 @@ const plans = [
     name: "PaintPal Pro",
     description:
       "Host as many painting events as you want, get paid for your sessions, and join any event that catches your eye.",
-    price: "GBP£5.99",
+    price: "GBP £5.99",
     priceDesc: "/month for one person",
     buttonText: "Start free trial",
     buttonStyle: "bg-[#5FBF92] text-white hover:bg-[#4AA97D]",
@@ -51,7 +52,7 @@ const plans = [
   {
     name: "PaintPal Advance",
     description: "Save some money when you subscribe to PaintPal for a year",
-    price: "GBP£57.50",
+    price: "GBP £57.50",
     priceDesc: "/year per person",
     buttonText: "Start free trial",
     buttonStyle: "bg-[#5FBF92] text-white hover:bg-[#4AA97D]",
@@ -68,6 +69,7 @@ const plans = [
 ];
 
 const Yearly = () => {
+  const navigate = useNavigate()
   return (
     <div className="lg:py-16 lg:mx-auto lg:max-w-[1500px] lg:px-6">
       {/* Pricing grid */}
@@ -100,6 +102,10 @@ const Yearly = () => {
                 </span>
               </div>
               <button
+                onClick={() => {
+              navigate("/signup");
+              scrollTo(0, 0);
+            }}
                 className={`mt-6 w-full py-3 rounded-lg font-medium transition ${plan.buttonStyle}`}
               >
                 {plan.buttonText}

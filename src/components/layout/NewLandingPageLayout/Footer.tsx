@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <div className="py-16 lg:mx-36">
       <div>
-        <div className="max-w-[1500px] mx-auto">
+        <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between m-6 lg:my-6 gap-6  ">
             <div>
               <img src={logo} className="w-28" />
@@ -141,8 +141,8 @@ const Footer = () => {
 
         {/***** Copyright Text */}
         <div>
-          <hr className="text-gray-700 my-10" />
-          <div className="max-w-[1500px] mx-auto border-t border-gray-300">
+      
+          <div className="max-w-[1400px] mx-auto border-t border-gray-300">
             <div className="flex flex-col lg:flex-row mx-12 items-center justify-between">
               <p className="py-5 text-sm text-gray-600 text-center">
                 © 2025 Copyright, All Right Reserved

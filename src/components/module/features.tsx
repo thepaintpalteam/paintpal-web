@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import chat from '../../assets/paintpal/svgs/chat.svg'
 import creative from '../../assets/paintpal/svgs/creative.svg'
 import host from '../../assets/paintpal/svgs/host.svg'
@@ -8,8 +9,9 @@ import variant from '../../assets/paintpal/svgs/variant.svg'
 import video from '../../assets/paintpal/svgs/video.svg'
 
 const Features = () => {
+  const navigate = useNavigate()
   return (
-    <div className=" py-16 mx-4 lg:mx-auto lg:max-w-[1500px]  ">
+    <div className=" py-16 mx-4 lg:mx-auto lg:max-w-[1400px]  ">
       <h1 className="text-4xl  font-semibold text-gray-900">Our features</h1>
 
       <div className="mt-16 space-y-10 ">
@@ -72,7 +74,10 @@ const Features = () => {
       </div>
 
       <div className="flex items-center justify-center mt-24">
-        <button className="bg-[#5FBF92]  py-2.5 px-3  font-medium text-lg rounded-lg hover:bg-[#4AA97D] transition">
+        <button  onClick={() => {
+              navigate("/signup");
+              scrollTo(0, 0);
+            }} className="bg-[#5FBF92]  py-2.5 px-3  font-medium text-lg rounded-lg hover:bg-[#4AA97D] transition">
           Unlock unlimited access
         </button>
       </div>

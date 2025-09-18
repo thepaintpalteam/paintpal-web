@@ -1,7 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
 import NewLandingPage from "../pages/newLandingPage/NewLandingPage";
 import AuthPageLayout from "../components/layout/authLayout";
-
+import Login from "../pages/auth/login";
+import SignUp from "../pages/auth/signup";
+import Plan from "../pages/auth/plan";
+import Payment from "../pages/auth/payment";
+import ForgotPassword from "../pages/auth/forgot-password";
+import ResetPassword from "../pages/auth/reset-password";
+import SetPassword from "../pages/auth/set-password";
+import Done from "../pages/auth/done";
+import JoinAsGuest from "../pages/auth/joinasguest";
+import EventPrice from "../pages/auth/eventprice";
+import Success from "../pages/auth/success";
+import JoinCall from "../pages/auth/join-call";
 
 const router = createBrowserRouter([
   {
@@ -9,14 +20,100 @@ const router = createBrowserRouter([
     element: <NewLandingPage />,
   },
 
-   {
+  {
     path: "/login",
     element: (
-      
-        <AuthPageLayout>
-           <></>
-        </AuthPageLayout>
-     
+      <AuthPageLayout>
+        <Login />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <AuthPageLayout>
+        <SignUp />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/plan",
+    element: (
+      <AuthPageLayout>
+        <Plan />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/payment",
+    element: (
+      <AuthPageLayout>
+        <Payment />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/forgot-password",
+    element: (
+      <AuthPageLayout>
+        <ForgotPassword />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/reset-password",
+    element: (
+      <AuthPageLayout>
+        <ResetPassword />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/set-password",
+    element: (
+      <AuthPageLayout>
+        <SetPassword />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/done",
+    element: (
+      <AuthPageLayout>
+        <Done />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/joinasguest",
+    element: (
+      <AuthPageLayout>
+        <JoinAsGuest />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/event-price",
+    element: (
+      <AuthPageLayout>
+        <EventPrice />
+      </AuthPageLayout>
+    ),
+  },
+  {
+    path: "/success",
+    element: (
+      <AuthPageLayout>
+        <Success />
+      </AuthPageLayout>
+    ),
+  },
+   {
+    path: "/join-call",
+    element: (
+      <AuthPageLayout>
+        <JoinCall />
+      </AuthPageLayout>
     ),
   },
 ]);

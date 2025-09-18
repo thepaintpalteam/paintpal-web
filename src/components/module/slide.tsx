@@ -8,7 +8,7 @@ const slides = [ slide_one, slide_two,  slide_three, slide_four];
 
 const Slide = () => {
   return (
-    <div className="mt-10 -mb-10 lg:-mb-44 mx-4 lg:mx-auto lg:max-w-[1500px]">
+    <div className="mt-10 -mb-10 lg:-mb-44 mx-4 lg:mx-auto lg:max-w-[1400px]">
       {/* Text Header */}
       <div className="flex flex-wrap items-end justify-between mb-10 ">
         <div>

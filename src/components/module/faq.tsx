@@ -58,7 +58,7 @@ const FAQs = () => {
 
   return (
     <div id="faqs" className="py-16">
-      <div className="lg:max-w-[1500px] mx-4 lg:mx-auto">
+      <div className="lg:max-w-[1400px] mx-4 lg:mx-auto">
         <div className="flex flex-col lg:flex-row items-start w-full px-10 ">
           {/* Left side */}
           <div className="w-full lg:w-1/3 mt-10">

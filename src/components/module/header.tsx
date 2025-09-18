@@ -28,7 +28,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center" data-aos="fade-up">
+      <div className="flex items-center justify-center lg:max-w-[1400px] lg:mx-auto " data-aos="fade-up">
         <img
           src={header}
           alt="PaintPal header"

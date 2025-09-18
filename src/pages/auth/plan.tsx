@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { User, Check, Star, Lock } from "lucide-react";
+import { Check, Star, Lock, User, } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
 
@@ -14,7 +14,7 @@ const plans = [
       "No access to hosting private events",
       "Cancel anytime",
     ],
-    icon: <User className="text-white" size={20} />,
+    icon: <User  size={20} />,
     iconBg: "bg-gray-400",
     border: "border-gray-400",
     badge: null,

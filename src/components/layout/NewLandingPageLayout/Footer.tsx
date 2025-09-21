@@ -9,23 +9,23 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="py-16 lg:mx-36">
+    <div className="py-16 lg:mx-24">
       <div>
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between m-6 lg:my-6 gap-6  ">
             <div>
               <img src={logo} className="w-28" />
-              <p className="lg:w-[400px] mt-4 text-lg text-gray-900">
+              <p className="lg:w-[300px] mt-4 text-md text-gray-900">
                 Bringing people together through the joy of painting. Create,
                 connect, and celebrate art in a whole new way with virtual pain
                 parties that feel just like the real thing.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-24  mt-10 lg:mt-0">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-16  mt-10 lg:mt-0">
               <div>
-                <p className="text-lg font-medium  mb-4">Product</p>
-                <ul className="flex flex-col gap-4 text-gray-900   cursor-pointer">
+                <p className="text-md font-medium  mb-4">Product</p>
+                <ul className="flex flex-col gap-4 text-gray-900  text-sm  cursor-pointer">
                   <li
                     onClick={() => {
                       navigate("/");
@@ -54,8 +54,8 @@ const Footer = () => {
               </div>
 
               <div>
-                <p className="text-lg font-medium  mb-4">Download</p>
-                <ul className="flex flex-col gap-4 text-gray-900   cursor-pointer">
+                <p className="text-md font-medium  mb-4">Download</p>
+                <ul className="flex flex-col gap-4 text-gray-900 text-sm   cursor-pointer">
                   <li
                     onClick={() => {
                       navigate("/");
@@ -92,8 +92,8 @@ const Footer = () => {
               </div>
 
               <div>
-                <p className="text-lg font-medium  mb-4">Support</p>
-                <ul className="flex flex-col gap-4 text-gray-900   cursor-pointer">
+                <p className="text-md font-medium  mb-4">Support</p>
+                <ul className="flex flex-col text-sm gap-4 text-gray-900   cursor-pointer">
                   <li
                     onClick={() => {
                       navigate("/");

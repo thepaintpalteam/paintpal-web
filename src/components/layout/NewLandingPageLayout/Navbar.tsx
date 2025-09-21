@@ -23,7 +23,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <div className=" py-2 lg:max-w-[1400px] lg:mx-auto  ">
+    <div className=" py-2 lg:max-w-[1200px] lg:mx-auto  ">
       <div className="max-w-[1440px] flex items-center justify-between py-2 text-sm mx-3 ">
         <div className="flex items-center gap-10">
           <NavLink to="/">
@@ -39,7 +39,7 @@ const Navbar = () => {
                   <li
                     key={index}
                     onClick={() => handleScroll(menu.id)}
-                    className="py-1 text-lg font-medium"
+                    className="py-1 text-md font-medium"
                   >
                     {menu.name}
                   </li>
@@ -54,11 +54,11 @@ const Navbar = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => navigate("/login")}
-                className="bg-white border border-gray-300 lg:w-32 py-3 font-medium px-4 text-lg  rounded-lg "
+                className="bg-white border border-gray-300 lg:w-32 py-2 font-medium px-4 text-md  rounded-lg "
               >
                 Login
               </button>
-              <button className="bg-[#5FBF92] py-3 hidden lg:block font-medium  px-4 text-lg  rounded-lg ">
+              <button className="bg-[#5FBF92] py-3 hidden lg:block font-medium  px-4 text-md  rounded-lg ">
                 Get started
               </button>
               <div

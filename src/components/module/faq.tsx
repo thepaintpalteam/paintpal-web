@@ -58,11 +58,11 @@ const FAQs = () => {
 
   return (
     <div id="faqs" className="py-16">
-      <div className="lg:max-w-[1300px] mx-4 lg:mx-auto">
+      <div className="lg:max-w-[1200px] mx-4 lg:mx-auto">
         <div className="flex flex-col lg:flex-row items-start w-full px-10 ">
           {/* Left side */}
           <div className="w-full lg:w-1/3 mt-10">
-            <h1 className="font-semibold text-2xl lg:text-3xl lg:leading-10 ">
+            <h1 className="font-semibold text-xl lg:text-2xl lg:leading-10 ">
               Frequently Asked <br className="hidden lg:block" />{" "}
               <span className="text-[#5FBF92]">Questions</span>
             </h1>
@@ -72,12 +72,12 @@ const FAQs = () => {
           <div className="w-full lg:w-2/3">
             <div className="divide-y divide-gray-200">
               {questions.map((question, index) => (
-                <div key={index} className="py-12">
+                <div key={index} className="py-8">
                   <button
                     onClick={() => handleToggle(index)}
                     className="flex w-full items-center justify-between text-left"
                   >
-                    <h2 className="text-lg lg:text-xl text-[#3D3D3D] font-bold">
+                    <h2 className="text-md lg:text-lg text-[#3D3D3D] font-bold">
                       {question.title}
                     </h2>
                     {openIndex === index ? (
@@ -88,7 +88,7 @@ const FAQs = () => {
                   </button>
 
                   {openIndex === index && (
-                    <p className="mt-4 text-[#606060] text-md lg:text-lg lg:leading-10">
+                    <p className="mt-4 text-[#606060] text-md lg:text-sm lg:leading-8">
                       {question.content}
                     </p>
                   )}

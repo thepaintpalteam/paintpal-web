@@ -6,10 +6,10 @@ const Profit = () => {
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
         {/* Text Section */}
         <div className="flex flex-col gap-6 lg:w-[800px] text-center lg:text-left">
-          <h1 className="text-3xl lg:text-4xl font-semibold text-gray-900">
+          <h1 className="text-xl lg:text-3xl font-semibold text-gray-900">
             PaintPal for Nonprofits
           </h1>
-          <p className="text-lg lg:text-xl text-gray-700 lg:leading-10">
+          <p className="text-md lg:text-md text-gray-700 lg:leading-10">
             As a nonprofit supporting neurodivergent communities, you understand
             the transformative power of creative expression and inclusive social
             experiences. Eligible nonprofit organisations dedicated to
@@ -20,10 +20,10 @@ const Profit = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <button className="bg-[#5FBF92] py-3 px-6 font-medium text-lg rounded-lg hover:bg-[#4AA97D] transition">
+            <button className="bg-[#5FBF92] py-3 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
               Apply for PaintPal nonprofits
             </button>
-            <button className="bg-white border border-gray-300 px-6 py-3 font-medium text-lg rounded-lg hover:bg-gray-50 transition">
+            <button className="bg-white border border-gray-300 px-6 py-3 font-medium text-md rounded-lg hover:bg-gray-50 transition">
               Check for eligibility
             </button>
           </div>

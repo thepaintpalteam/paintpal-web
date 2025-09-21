@@ -6,7 +6,7 @@ const Simple = () => {
     <div id="how-it-works" className="mt-16 pb-16 mx-4 lg:max-w-[1300px] lg:mx-auto ">
       {/* Title */}
       <div>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl text-center font-semibold text-gray-900">
+        <h1 className="text-2xl md:text-2xl lg:text-3xl text-center font-semibold text-gray-900">
           Simple stroke today, <br className="hidden lg:block" /> stunning
           masterpieces tomorrow
         </h1>
@@ -17,7 +17,7 @@ const Simple = () => {
         <img
           src={header}
           alt="PaintPal header"
-          className="w-full lg:w-[1400px] h-[500px] lg:h-full rounded-lg object-cover"
+          className="w-full lg:w-[1200px] h-[500px] lg:h-full rounded-lg object-cover"
         />
 
         {/* Overlay content */}

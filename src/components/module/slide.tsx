@@ -8,19 +8,19 @@ const slides = [ slide_one, slide_two,  slide_three, slide_four];
 
 const Slide = () => {
   return (
-    <div className="mt-10 -mb-10 lg:-mb-[700px] mx-4 lg:mx-auto lg:max-w-[1300px]">
+    <div className="mt-10 -mb-10 lg:-mb-[800px] mx-4 lg:mx-auto lg:max-w-[1200px]">
       {/* Text Header */}
       <div className="flex flex-wrap items-end justify-between mb-10 ">
         <div>
           <span className="text-md text-gray-600">
             Paint, chat, call collaborate
           </span>
-          <h1 className="text-2xl lg:text-4xl font-semibold text-gray-900">
+          <h1 className="text-xl lg:text-2xl font-semibold text-gray-900">
             Create, Laugh, and Paint like <br className="hidden lg:block" />
             you're in the same room.
           </h1>
         </div>
-        <button className="bg-white border border-gray-300 px-2 py-2 w-36 font-medium text-lg rounded-lg hover:bg-gray-50 transition">
+        <button className="bg-white border border-gray-300 px-2 py-2 w-36 font-medium text-md rounded-lg hover:bg-gray-50 transition">
           Start for free
         </button>
       </div>

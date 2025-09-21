@@ -71,14 +71,14 @@ const plans = [
 const Yearly = () => {
   const navigate = useNavigate()
   return (
-    <div className="lg:py-16 lg:mx-auto lg:max-w-[1500px] lg:px-6">
+    <div className="lg:py-10 lg:mx-auto lg:max-w-[1500px] lg:px-6">
       {/* Pricing grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {plans.map((plan, idx) => (
           <div key={idx} className="rounded-lg flex border flex-col">
             {/* Header */}
             <div
-              className={`${plan.bg} px-6 pt-10 pb-6 rounded-t-lg flex flex-col h-[330px] relative`}
+              className={`${plan.bg} px-6 pt-10 pb-6 rounded-t-lg flex flex-col h-[320px] relative`}
             >
               {/* Crown for Pro & Advance */}
               {(plan.name.includes("Pro") || plan.name.includes("Advance")) && (
@@ -89,15 +89,15 @@ const Yearly = () => {
                 />
               )}
 
-              <h2 className="text-2xl font-semibold text-gray-900">
+              <h2 className="text-xl font-semibold text-gray-900">
                 {plan.name}
               </h2>
-              <p className="mt-2 text-gray-700 flex-1">{plan.description}</p>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-gray-900">
+              <p className="mt-2 text-gray-700 text-sm flex-1">{plan.description}</p>
+              <div className="">
+                <span className="text-3xl font-bold text-gray-900">
                   {plan.price}
                 </span>
-                <span className="block text-gray-600 text-md mt-2">
+                <span className="block text-gray-600 text-sm mt-2">
                   {plan.priceDesc}
                 </span>
               </div>
@@ -119,7 +119,7 @@ const Yearly = () => {
                 {plan.features.map((feature, i) => (
                   <li
                     key={i}
-                    className="flex items-center text-gray-900 text-md"
+                    className="flex items-center text-gray-900 text-sm"
                   >
                     {feature.available ? (
                       <Check className="w-5 h-5 text-green-500 mr-2" />
@@ -137,7 +137,7 @@ const Yearly = () => {
 
       {/* Footer note */}
       <div className="mt-12 text-center">
-        <p className="text-gray-900 text-lg font-medium">
+        <p className="text-gray-900 text-md font-medium">
           Usage and event hosting limits vary between plans.
         </p>
       </div>

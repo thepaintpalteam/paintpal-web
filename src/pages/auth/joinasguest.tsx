@@ -21,7 +21,7 @@ const JoinAsGuest = () => {
         </div>
 
         {/* Header */}
-        <div className=" mt-3 px-6 py-4 ">
+        <div className=" mt-3 px-6 py-3 ">
           <h2 className="text-2xl font-semibold text-gray-800">
             Join a fun painting group
           </h2>

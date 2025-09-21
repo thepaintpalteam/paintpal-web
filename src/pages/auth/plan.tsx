@@ -71,7 +71,7 @@ const Plan = () => {
         </div>
 
         {/* Header */}
-        <div className="mt-3 px-6 py-4">
+        <div className="mt-3 px-6 py-3">
           <h2 className="text-xl font-semibold text-gray-800">
             Choose your preferred plan
           </h2>

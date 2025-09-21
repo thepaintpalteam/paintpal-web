@@ -21,7 +21,7 @@ const EventPrice = () => {
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg">
         {/* Header */}
-        <div className="mt-3 mx-6 py-4 border-b">
+        <div className="mt-3 mx-6 py-3 border-b">
           <h2 className="text-2xl font-semibold text-gray-800">
             Event price
           </h2>
@@ -57,7 +57,7 @@ const EventPrice = () => {
                 Card Type
               </label>
               <div
-                className="border border-gray-400 rounded-lg px-3 py-4 flex items-center justify-between cursor-pointer"
+                className="border border-gray-400 rounded-lg px-3 py-3 flex items-center justify-between cursor-pointer"
                 onClick={() => setOpen((prev) => !prev)}
               >
                 <div className="flex items-center gap-3">
@@ -111,7 +111,7 @@ const EventPrice = () => {
                 type="text"
                 id="card_number"
                 placeholder="Enter your card number here"
-                className="peer w-full border border-gray-400 rounded-lg px-3 py-4 outline-none"
+                className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
               />
               <label
                 htmlFor="card_number"
@@ -127,7 +127,7 @@ const EventPrice = () => {
                 type="text"
                 id="card_name"
                 placeholder="Mark Keith"
-                className="peer w-full border border-gray-400 rounded-lg px-3 py-4 outline-none"
+                className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
               />
               <label
                 htmlFor="card_name"
@@ -145,7 +145,7 @@ const EventPrice = () => {
                 onFocus={() => setType("date")}
                 onBlur={(e) => !e.target.value && setType("text")}
                 placeholder="dd/mm/yy"
-                className="peer w-full border border-gray-400 rounded-lg pl-3 pr-10 py-4 outline-none"
+                className="peer w-full border border-gray-400 rounded-lg pl-3 pr-10 py-3 outline-none"
               />
               <label
                 htmlFor="expiry"
@@ -165,7 +165,7 @@ const EventPrice = () => {
                 type="text"
                 id="cvv"
                 placeholder="***"
-                className="peer w-full border border-gray-400 rounded-lg px-3 py-4 outline-none"
+                className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
               />
               <label
                 htmlFor="cvv"

@@ -14,7 +14,7 @@ const JoinCall = () => {
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg">
         {/* Header */}
-        <div className="mt-3 mx-6 py-4">
+        <div className="mt-3 mx-6 py-3">
           {/* <p className="text-gray-500 mt-1">£5.99</p> */}
           <h2 className="text-2xl font-semibold text-gray-800">Event price</h2>
         </div>

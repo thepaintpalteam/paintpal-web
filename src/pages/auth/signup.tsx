@@ -29,8 +29,8 @@ const SignUp = () => {
         </div>
 
         {/* Header */}
-        <div className="mt-3 px-6 py-4">
-          <h2 className="text-2xl font-semibold text-gray-800">
+        <div className="mt-3 px-6 py-3">
+          <h2 className="text-xl font-semibold text-gray-800">
             Create your PaintPal account
           </h2>
           <p className="text-gray-500 mt-1">
@@ -47,7 +47,7 @@ const SignUp = () => {
               type="text"
               id="first_name"
               placeholder="Mark"
-              className="peer w-full border border-gray-400 rounded-lg px-3 py-4 outline-none"
+              className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />
             <label
               htmlFor="first_name"
@@ -63,7 +63,7 @@ const SignUp = () => {
               type="text"
               id="last_name"
               placeholder="Keith"
-              className="peer w-full border border-gray-400 rounded-lg px-3 py-4 outline-none"
+              className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />
             <label
               htmlFor="last_name"
@@ -80,7 +80,7 @@ const SignUp = () => {
                 type="text"
                 id="username"
                 placeholder="Mark"
-                className="peer w-full border border-gray-400 rounded-lg px-3 py-4 outline-none"
+                className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
               />
               <label
                 htmlFor="username"
@@ -100,7 +100,7 @@ const SignUp = () => {
               type="email"
               id="email"
               placeholder="mark@example.com"
-              className="peer w-full border border-gray-400 rounded-lg px-3 py-4 outline-none"
+              className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />
             <label
               htmlFor="email"
@@ -118,7 +118,7 @@ const SignUp = () => {
               onFocus={() => setType("date")}
               onBlur={(e) => !e.target.value && setType("text")}
               placeholder="dd/mm/yy"
-              className="peer w-full border border-gray-400 rounded-lg pl-3 pr-10 py-4 outline-none"
+              className="peer w-full border border-gray-400 rounded-lg pl-3 pr-10 py-3 outline-none"
             />
             <label
               htmlFor="dob"
@@ -140,7 +140,7 @@ const SignUp = () => {
               type="text"
               id="location"
               placeholder="Country of resident"
-              className="peer w-full border border-gray-400 rounded-lg px-3 py-4 outline-none"
+              className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />
             <label
               htmlFor="location"
@@ -203,7 +203,7 @@ const SignUp = () => {
           </div>
 
           {/* Terms Switch */}
-          <div className="col-span-2 flex items-center gap-3 mt-4">
+          <div className="col-span-2 flex items-center gap-3 mt-2">
             <button
               type="button"
               onClick={() => setAgree(!agree)}
@@ -226,7 +226,7 @@ const SignUp = () => {
           </div>
 
           {/* Submit */}
-          <div className="col-span-2 mt-4 border-t border-gray-300 py-6">
+          <div className="col-span-2 mt-2 border-t border-gray-300 py-6">
             <button
             onClick={() => {navigate('/plan'); scrollTo(0,0)}}
               type="submit"

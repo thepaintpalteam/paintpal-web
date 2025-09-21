@@ -31,14 +31,14 @@ const Login = () => {
 
         {/* Header */}
         <div className=" mt-3 px-6 py-4 ">
-          <h2 className="text-2xl font-semibold text-gray-800">
+          <h2 className="text-xl font-semibold text-gray-800">
             Log in to your account
           </h2>
-          <p className="text-gray-500 mt-1">Welcome back, Mark!</p>
+          <p className="text-gray-500  mt-1">Welcome back, Mark!</p>
         </div>
 
         {/* Form */}
-        <form className="space-y-8 px-6 pb-6 mt-4">
+        <form className="space-y-6 px-6 pb-6 mt-4">
           {/* <div className="relative">
             <input
               type="text"
@@ -90,7 +90,7 @@ const Login = () => {
                   navigate("/forgot-password");
                   scrollTo(0, 0);
                 }}
-                className="text-md text-gray-500"
+                className="text-sm text-gray-500"
               >
                 Forgot your password?
               </button>

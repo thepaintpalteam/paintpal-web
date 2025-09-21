@@ -22,7 +22,7 @@ const ForgotPassword = () => {
         </div>
 
         {/* Header */}
-        <div className="mt-3 px-6 py-4 text-center flex flex-col gap-2 items-center justify-center">
+        <div className="mt-3 px-6 py-3 text-center flex flex-col gap-2 items-center justify-center">
           <img src={forgot} className="w-12 h-12" />
           <h2 className="text-2xl font-semibold text-gray-800">
             Forgot password?

@@ -18,7 +18,7 @@ const Header = () => {
             stroke at a time.
           </p>
 
-          <div className="flex items-center gap-4 mt-6">
+          <div className="flex flex-wrap justify-center items-center gap-4 mt-6">
             <button className="bg-[#5FBF92] py-3 w-44 font-medium px-4 text-md  rounded-lg ">
               Sign up
             </button>

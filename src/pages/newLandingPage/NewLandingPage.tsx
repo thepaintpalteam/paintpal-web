@@ -9,7 +9,8 @@ import Features from "../../components/module/features";
 import Pricing from "../../components/module/pricing";
 import Profit from "../../components/module/profit";
 import FAQs from "../../components/module/faq";
-import Slide from "../../components/module/slide";
+
+import Earn from "../../components/module/earn";
 
 const NewLandingPage = () => {
   return (
@@ -27,7 +28,9 @@ const NewLandingPage = () => {
 
         <Simple />
 
-        <Slide />
+        <Earn />
+
+        
 
         <div
           className="bg-no-repeat bg-cover bg-center   w-full"
@@ -38,7 +41,7 @@ const NewLandingPage = () => {
 
         <Pricing />
 
-        <div className="bg-gray-100">
+        <div className="bg-[#5FBF92]/10">
           <Profit />
         </div>
         <FAQs />

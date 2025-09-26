@@ -1,7 +1,7 @@
-import profit from "../../assets/paintpal/images/earn.png";
+import profit from "../../assets/paintpal/images/Earn.gif";
 import invite from "../../assets/paintpal/images/invite.png";
 import music from "../../assets/paintpal/images/music.png";
-import save from "../../assets/paintpal/images/save.png";
+import save from "../../assets/paintpal/images/Save.gif"
 
 const Earn = () => {
   return (
@@ -44,7 +44,7 @@ const Earn = () => {
             <img
               src={profit}
               alt="PaintPal for Nonprofits"
-              className="max-w-[280px] lg:max-w-[300px] w-full h-auto rounded-lg"
+              className="max-w-[280px] lg:max-w-[350px] w-full h-auto rounded-lg"
             />
           </div>
         </div>
@@ -68,7 +68,7 @@ const Earn = () => {
             <img
               src={save}
               alt="PaintPal for Nonprofits"
-              className="max-w-[260px] lg:max-w-[300px] w-full h-auto rounded-lg"
+              className="max-w-[260px] lg:max-w-[350px] w-full h-auto rounded-lg"
             />
           </div>
         </div>
@@ -90,7 +90,7 @@ const Earn = () => {
             <img
               src={music}
               alt="PaintPal for Nonprofits"
-              className="max-w-[260px] lg:max-w-[300px] w-full h-auto rounded-lg"
+              className="max-w-[260px] lg:max-w-[350px] w-full h-auto rounded-lg"
             />
           </div>
         </div>

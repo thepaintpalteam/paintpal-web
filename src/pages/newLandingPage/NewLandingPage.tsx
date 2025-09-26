@@ -1,7 +1,5 @@
 import Navbar from "../../components/layout/NewLandingPageLayout/Navbar";
 import newhero from "../../assets/paintpal/images/background.png";
-
-
 import Footer from "../../components/layout/NewLandingPageLayout/Footer";
 import Header from "../../components/module/header";
 import Simple from "../../components/module/simple";

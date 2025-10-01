@@ -1,12 +1,16 @@
 import { ArrowLeft } from "lucide-react";
 import forgot from "../../assets/paintpal/svgs/reset.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState(["", "", "", ""]);
+  const location = useLocation();
+  const email = (location.state as { email?: string })?.email;
+
+  const token = 2
 
   const handleChange = (value: string, index: number) => {
     if (/^[0-9]?$/.test(value)) {
@@ -47,7 +51,7 @@ const ResetPassword = () => {
           <p className="text-gray-600">
             We sent a code to{" "}
             <span className="text-gray-900 font-medium">
-              markkeith@gmail.com
+              {email}
             </span>
           </p>
         </div>
@@ -74,7 +78,7 @@ const ResetPassword = () => {
           {/* Continue Button */}
           <button
             onClick={() => {
-              navigate("/set-password");
+              navigate(`/set-password/${token}`);
               scrollTo(0, 0);
             }}
             type="submit"

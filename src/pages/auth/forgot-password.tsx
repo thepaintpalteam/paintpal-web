@@ -2,13 +2,41 @@ import { ArrowLeft } from "lucide-react";
 import forgot from "../../assets/paintpal/svgs/forgot.svg";
 import { useNavigate } from "react-router-dom";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
+import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import authServices from "../../services/authServices";
+import toast from "react-hot-toast";
+
+
+
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+
+  const mutation = useMutation({
+    mutationFn: authServices.RequestPassword,
+    onSuccess: () => {
+      // navigate to reset page after success
+     navigate("/reset-password", { state: { email } });
+      toast.success("Email sent successfully")
+      scrollTo(0, 0);
+    },
+    onError: (error: any) => {
+      console.error("Reset failed:", error.response?.data || error.message);
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    mutation.mutate({ email });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-xl rounded-xl shadow-lg">
-        {/* Logo */}
+        {/* Header video */}
         <div className="relative w-full h-48">
           <video
             src={authheader}
@@ -16,9 +44,8 @@ const ForgotPassword = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover rounded-t-xl "
+            className="w-full h-full object-cover rounded-t-xl"
           />
-          {/* Optional dark overlay */}
         </div>
 
         {/* Header */}
@@ -33,26 +60,26 @@ const ForgotPassword = () => {
         </div>
 
         {/* Form */}
-        <form className="space-y-6 px-6 pb-6 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-6 px-6 pb-6 mt-4">
           <div>
             <input
-              type="text"
+              type="email"
               id="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               placeholder="Enter your email"
               className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
+              required
             />
           </div>
 
-          {/* Login Button */}
+          {/* Reset Button */}
           <button
             type="submit"
-            onClick={() => {
-              navigate("/reset-password");
-              scrollTo(0, 0);
-            }}
-            className="w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition"
+            disabled={mutation.isPending}
+            className="w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition disabled:opacity-50"
           >
-            Reset password
+            {mutation.isPending ? "Sending..." : "Reset password"}
           </button>
 
           <div

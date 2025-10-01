@@ -4,7 +4,6 @@ import AuthPageLayout from "../components/layout/authLayout";
 import Login from "../pages/auth/login";
 import SignUp from "../pages/auth/signup";
 import Plan from "../pages/auth/plan";
-import Payment from "../pages/auth/payment";
 import ForgotPassword from "../pages/auth/forgot-password";
 import ResetPassword from "../pages/auth/reset-password";
 import SetPassword from "../pages/auth/set-password";
@@ -13,6 +12,7 @@ import JoinAsGuest from "../pages/auth/joinasguest";
 import EventPrice from "../pages/auth/eventprice";
 import Success from "../pages/auth/success";
 import JoinCall from "../pages/auth/join-call";
+import PaymentWrapper from "../pages/auth/paymentwrapper";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     path: "/payment",
     element: (
       <AuthPageLayout>
-        <Payment />
+        <PaymentWrapper />
       </AuthPageLayout>
     ),
   },
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/set-password",
+    path: "/set-password/:token",
     element: (
       <AuthPageLayout>
         <SetPassword />

@@ -2,20 +2,47 @@ import { useState } from "react";
 import { Calendar, Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
+import { useSignup } from "../../context/SignupContext";
 
 const SignUp = () => {
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    dateOfBirth: "",
+    location: "",
+  });
   const [type, setType] = useState("text");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [agree, setAgree] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { updateData } = useSignup();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setForm((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleNext = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!agree) return alert("Please agree to the terms.");
+    if (!form.firstName || !form.lastName || !form.email || !form.password)
+      return alert("Please fill in all required fields.");
+
+    updateData(form); // Save to context
+    navigate("/plan");
+    scrollTo(0, 0);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg">
-        
-         {/* Video Header */}
+        {/* Video Header */}
         <div className="relative w-full h-48">
           <video
             src={authheader}
@@ -25,7 +52,6 @@ const SignUp = () => {
             playsInline
             className="w-full h-full object-cover rounded-t-xl "
           />
-          {/* Optional dark overlay */}
         </div>
 
         {/* Header */}
@@ -40,17 +66,22 @@ const SignUp = () => {
         </div>
 
         {/* Form */}
-        <form className="grid grid-cols-2 gap-y-8 gap-x-3 px-6 pb-6 mt-4">
+        <form
+          onSubmit={handleNext}
+          className="grid grid-cols-2 gap-y-8 gap-x-3 px-6 pb-6 mt-4"
+        >
           {/* First Name */}
           <div className="relative">
             <input
               type="text"
-              id="first_name"
+              id="firstName"
+              value={form.firstName}
+              onChange={handleChange}
               placeholder="Mark"
               className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />
             <label
-              htmlFor="first_name"
+              htmlFor="firstName"
               className="absolute -top-2 left-3 bg-white px-1 text-gray-500 text-sm"
             >
               First name
@@ -61,12 +92,14 @@ const SignUp = () => {
           <div className="relative">
             <input
               type="text"
-              id="last_name"
+              id="lastName"
+              value={form.lastName}
+              onChange={handleChange}
               placeholder="Keith"
               className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />
             <label
-              htmlFor="last_name"
+              htmlFor="lastName"
               className="absolute -top-2 left-3 bg-white px-1 text-gray-500 text-sm"
             >
               Last name
@@ -75,10 +108,12 @@ const SignUp = () => {
 
           {/* Username */}
           <div className="col-span-2">
-            <div className="relative ">
+            <div className="relative">
               <input
                 type="text"
                 id="username"
+                value={form.username}
+                onChange={handleChange}
                 placeholder="Mark"
                 className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
               />
@@ -99,6 +134,8 @@ const SignUp = () => {
             <input
               type="email"
               id="email"
+              value={form.email}
+              onChange={handleChange}
               placeholder="mark@example.com"
               className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />
@@ -113,21 +150,21 @@ const SignUp = () => {
           {/* Date of Birth */}
           <div className="relative">
             <input
-              id="dob"
+              id="dateOfBirth"
               type={type}
+              value={form.dateOfBirth}
+              onChange={handleChange}
               onFocus={() => setType("date")}
               onBlur={(e) => !e.target.value && setType("text")}
               placeholder="dd/mm/yy"
               className="peer w-full border border-gray-400 rounded-lg pl-3 pr-10 py-3 outline-none"
             />
             <label
-              htmlFor="dob"
+              htmlFor="dateOfBirth"
               className="absolute -top-2 left-3 bg-white px-1 text-gray-500 text-sm"
             >
               Date of Birth
             </label>
-
-            {/* Calendar Icon */}
             <Calendar
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"
               size={20}
@@ -139,6 +176,8 @@ const SignUp = () => {
             <input
               type="text"
               id="location"
+              value={form.location}
+              onChange={handleChange}
               placeholder="Country of resident"
               className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />
@@ -155,18 +194,18 @@ const SignUp = () => {
             <input
               type={showPassword ? "text" : "password"}
               id="password"
+              value={form.password}
+              onChange={handleChange}
               placeholder=" "
-              className="peer w-full border border-gray-400 rounded-lg px-3 pt-5 pb-2 outline-none focus:border-[#FEAF1E] focus:ring-1 focus:ring-[#FEAF1E]"
+              className="peer w-full border border-gray-400 rounded-lg px-3 pt-5 pb-2 outline-none "
             />
             <label
               htmlFor="password"
-              className="absolute left-3 top-2.5 bg-white px-1 text-gray-500 text-sm transition-all 
+              className="absolute left-3 -top-2 bg-white px-1 text-gray-500 text-sm transition-all 
              peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400"
             >
               Password
             </label>
-
-            {/* Eye Icon */}
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
@@ -180,19 +219,19 @@ const SignUp = () => {
           <div className="relative col-span-2">
             <input
               type={showConfirmPassword ? "text" : "password"}
-              id="confirm_password"
+              id="confirmPassword"
+              value={form.confirmPassword}
+              onChange={handleChange}
               placeholder=" "
-              className="peer w-full border border-gray-400 rounded-lg px-3 pt-5 pb-2 outline-none focus:border-[#FEAF1E] focus:ring-1 focus:ring-[#FEAF1E]"
+              className="peer w-full border border-gray-400 rounded-lg px-3 pt-5 pb-2 outline-none "
             />
             <label
-              htmlFor="confirm_password"
-              className="absolute left-3 top-2.5 bg-white px-1 text-gray-500 text-sm transition-all 
+              htmlFor="confirmPassword"
+              className="absolute left-3 -top-2  bg-white px-1 text-gray-500 text-sm transition-all 
              peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400"
             >
               Confirm Password
             </label>
-
-            {/* Eye Icon */}
             <button
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
@@ -213,7 +252,7 @@ const SignUp = () => {
             >
               <div
                 className={`bg-white w-5 h-5 rounded-full shadow-md transform transition ${
-                  agree ? "translate-x-6" : ""
+                  agree ? "translate-x-3" : ""
                 }`}
               />
             </button>
@@ -228,7 +267,6 @@ const SignUp = () => {
           {/* Submit */}
           <div className="col-span-2 mt-2 border-t border-gray-300 py-6">
             <button
-            onClick={() => {navigate('/plan'); scrollTo(0,0)}}
               type="submit"
               className="w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition"
             >

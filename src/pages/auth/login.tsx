@@ -2,10 +2,42 @@ import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authServices from "../../services/authServices";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
+import { LoginT } from "../../type";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+
+   const [formData, setFormData] = useState<LoginT>({
+    email: "",
+    password: "",
+  });
+
+
+  // React Query mutation
+  const { mutate, status } = useMutation({
+    mutationFn: authServices.Login,
+    onSuccess: () => {
+      toast.success("Login Successfully")
+    },
+    onError: (err: any) => {
+      console.error("Login failed:", err);
+    },
+  });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    mutate(formData);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-2xl   rounded-xl shadow-lg">
@@ -58,8 +90,10 @@ const Login = () => {
             {" "}
             <input
               type="text"
-              id="username"
-              placeholder="Username or Email"
+              id="email"
+              placeholder="Enter your Email"
+              value={formData.email}
+              onChange={handleChange}
               className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />{" "}
           </div>
@@ -71,6 +105,8 @@ const Login = () => {
                 type={showPassword ? "text" : "password"}
                 id="password"
                 placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
                 className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
               />{" "}
               <button
@@ -100,9 +136,11 @@ const Login = () => {
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition"
+            onClick={handleSubmit}
+            disabled={status === "pending"}
+            className="w-full bg-[#5FBF92] hover:bg-[#5FBF92]/60 py-3 rounded-lg font-semibold transition"
           >
-            Login
+           {status === 'pending' ? "Logging in..." : "Login"}
           </button>
 
           <div className="flex items-center justify-center gap-3  ">

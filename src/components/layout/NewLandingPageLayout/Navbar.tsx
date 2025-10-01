@@ -58,7 +58,7 @@ const Navbar = () => {
               >
                 Login
               </button>
-              <button className="bg-[#5FBF92] py-3 hidden lg:block font-medium  px-4 text-md  rounded-lg ">
+              <button  onClick={() => navigate("/signup")} className="bg-[#5FBF92] py-3 hidden lg:block font-medium  px-4 text-md  rounded-lg ">
                 Get started
               </button>
               <div

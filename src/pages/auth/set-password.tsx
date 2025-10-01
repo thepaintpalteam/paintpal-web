@@ -1,12 +1,15 @@
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import forgot from "../../assets/paintpal/svgs/set.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authServices from "../../services/authServices";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 const SetPassword = () => {
   const navigate = useNavigate();
-
+  const { token } = useParams();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -24,10 +27,28 @@ const SetPassword = () => {
 
   const strength = getStrength(password);
 
+  const mutation = useMutation({
+    mutationFn: authServices.ResetPassword,
+    onSuccess: () => {
+      navigate("/done");
+
+      scrollTo(0, 0);
+    },
+    onError: (error: any) => {
+      toast.error("Reset failed:", error.response?.data || error.message);
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!token || !password) return toast.error("Enter password")
+    mutation.mutate({ token, newPassword: password });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-xl rounded-xl shadow-lg">
-      {/* Video Header */}
+        {/* Video Header */}
         <div className="relative w-full h-48">
           <video
             src={authheader}
@@ -104,13 +125,11 @@ const SetPassword = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            onClick={() => {
-              navigate("/done");
-              scrollTo(0, 0);
-            }}
+             onClick={handleSubmit}
+            disabled={mutation.isPending}
             className="w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition"
           >
-            Reset password
+            {mutation.isPending ? "Sending..." : "Reset password"}
           </button>
 
           <div

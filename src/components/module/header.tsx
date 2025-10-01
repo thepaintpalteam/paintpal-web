@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import header from "../../assets/paintpal/images/header.png";
 
 const Header = () => {
+  const navigate = useNavigate()
   return (
     <div className="pt-6 pb-16 mx-4 lg:mx-0">
       <div className="flex justify-center items-center text-center px-6 py-14" data-aos="fade-down">
@@ -19,7 +21,7 @@ const Header = () => {
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-4 mt-6">
-            <button className="bg-[#5FBF92] py-3 w-44 font-medium px-4 text-md  rounded-lg ">
+            <button  onClick={() => {navigate("/signup"); scrollTo(0,0)}} className="bg-[#5FBF92] hover:bg-[#5FBF92]/90 py-3 w-44 font-medium px-4 text-md  rounded-lg ">
               Sign up
             </button>
             <button className="bg-white border border-gray-200 w-44  py-3 font-medium px-4 text-md  rounded-lg ">

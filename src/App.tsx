@@ -5,7 +5,7 @@ import { router } from "./router";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { LocationProvider } from "../src/hooks/useLocation";
+import { SignupProvider } from "./context/SignupContext";
 
 function App() {
   useEffect(() => {
@@ -20,9 +20,11 @@ function App() {
   return (
     <>
       <QueryProvider>
-        <LocationProvider>
-          <RouterProvider router={router} />
-        </LocationProvider>
+        <SignupProvider>
+            <RouterProvider router={router} />
+
+        </SignupProvider>
+        
       </QueryProvider>
       <Toaster />
     </>

@@ -14,19 +14,18 @@ const Payment = () => {
 
   // State for selected payment method
   const [method, setMethod] = useState<"card" | "bank" | "code">("card");
-  const [referenceCode, setReferenceCode] = useState("");
+  //const [referenceCode, setReferenceCode] = useState("");
 
   // Payment handler
   const handlePay = async () => {
     if (method === "card") {
       if (!stripe || !elements) return;
-
-      // 1️⃣ Create PaymentIntent on backend
+ 
       const res = await fetch("http://localhost:3000/create-payment-intent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          amount: price * 100, // convert to cents
+          amount: price * 100, 
           currency: currency.toLowerCase(),
         }),
       });
@@ -53,15 +52,15 @@ const Payment = () => {
       }
     }
 
-    if (method === "bank") {
-      alert("Please complete your bank transfer using the provided account details.");
-    }
+    // if (method === "bank") {
+    //   alert("Please complete your bank transfer using the provided account details.");
+    // }
 
-    if (method === "code") {
-      if (!referenceCode) return alert("Please enter your reference code.");
-     updateData({ paymentMethod: { referenceCode } as any });
-      alert("Reference code applied successfully!");
-    }
+    // if (method === "code") {
+    //   if (!referenceCode) return alert("Please enter your reference code.");
+    //  updateData({ paymentMethod: { referenceCode } as any });
+    //   alert("Reference code applied successfully!");
+    // }
   };
 
   return (
@@ -85,7 +84,7 @@ const Payment = () => {
               >
                 Card
               </button>
-              <button
+              {/* <button
                 className={`px-4 py-2 rounded-lg border ${method === "bank" ? "border-green-500" : "border-gray-300"}`}
                 onClick={() => setMethod("bank")}
               >
@@ -96,18 +95,17 @@ const Payment = () => {
                 onClick={() => setMethod("code")}
               >
                 Reference Code
-              </button>
+              </button> */}
             </div>
           </div>
 
-          {/* Conditional Payment Input */}
-          {method === "card" && (
+       
             <div className="border p-4 rounded-lg">
               <CardElement options={{ hidePostalCode: true }} />
             </div>
-          )}
+        
 
-          {method === "bank" && (
+          {/* {method === "bank" && (
             <div className="border p-4 rounded-lg text-gray-700">
               <p>Use the following bank account to make your payment:</p>
               <ul className="mt-2 list-disc list-inside">
@@ -116,9 +114,9 @@ const Payment = () => {
                 <li>Account Number: 1234567890</li>
               </ul>
             </div>
-          )}
+          )} */}
 
-          {method === "code" && (
+          {/* {method === "code" && (
             <div>
               <input
                 type="text"
@@ -128,7 +126,7 @@ const Payment = () => {
                 onChange={(e) => setReferenceCode(e.target.value)}
               />
             </div>
-          )}
+          )} */}
 
           <button
             type="button"

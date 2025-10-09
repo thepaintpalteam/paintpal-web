@@ -4,13 +4,14 @@ import apiClient from './axiosInstance';
 
 const Login  = async (payload: LoginT) => {
   const res = await apiClient.post('/Auth/login', payload);
-  console.log(res.data)
-  const data = res.data;
 
-  const { authToken, ...user } = data;
+
+  const { token, ...user } = res.data;
 
   localStorage.setItem("user", JSON.stringify(user));
-  localStorage.setItem("token", authToken);
+  localStorage.setItem("token", token);
+
+  return res.data;
 };
 
 

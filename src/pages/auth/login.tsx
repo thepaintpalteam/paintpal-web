@@ -11,25 +11,31 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-
-   const [formData, setFormData] = useState<LoginT>({
+  const [formData, setFormData] = useState<LoginT>({
     email: "",
     password: "",
   });
 
-
-  // React Query mutation
   const { mutate, status } = useMutation({
     mutationFn: authServices.Login,
-    onSuccess: () => {
-      toast.success("Login Successfully")
+    onSuccess: (data: any) => {
+      console.log("Login response data:", data);
+      const token = data?.token;
+      toast.success("Login Successfully");
+
+      if (token) {
+        // Redirect to PaintPal native app via deep link
+        window.location.href = `paintpal://login?authToken=${token}`;
+      } else {
+        console.error("No token returned from server");
+      }
     },
-    onError: (err: any) => {
-      console.error("Login failed:", err);
+    onError: () => {
+      toast.error("Login failed");
     },
   });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
@@ -140,7 +146,7 @@ const Login = () => {
             disabled={status === "pending"}
             className="w-full bg-[#5FBF92] hover:bg-[#5FBF92]/60 py-3 rounded-lg font-semibold transition"
           >
-           {status === 'pending' ? "Logging in..." : "Login"}
+            {status === "pending" ? "Logging in..." : "Login"}
           </button>
 
           <div className="flex items-center justify-center gap-3  ">

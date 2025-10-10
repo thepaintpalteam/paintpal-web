@@ -21,7 +21,7 @@ const ChangePassword  = async (payload: ChangePasswordT) => {
 };
 
 const SignUp  = async (payload: UserRegistration) => {
-  const res = await apiClient.post('/Auth/signup', payload);
+  const res = await apiClient.post('/Users/signup', payload);
   return res.data;
 };
 

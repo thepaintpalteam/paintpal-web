@@ -1,10 +1,14 @@
-import { useState } from "react";
-import { Calendar, Eye, EyeOff } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useState, useRef } from "react";
+import { Eye, EyeOff, Calendar } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+
 import authheader from "../../assets/paintpal/images/authheader.mp4";
-import { useSignup } from "../../context/SignupContext";
+import authServices from "../../services/authServices";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
+  const dobRef = useRef<HTMLInputElement | null>(null);
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -14,35 +18,151 @@ const SignUp = () => {
     confirmPassword: "",
     dateOfBirth: "",
     location: "",
+    phoneNumber: "",
   });
   const [type, setType] = useState("text");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [agree, setAgree] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string | null>>({});
 
-  const navigate = useNavigate();
-  const { updateData } = useSignup();
+  const { mutate, status } = useMutation({
+    mutationFn: authServices.SignUp,
+    onSuccess: (data: any) => {
+      toast.success("Account created successfully");
+      if (data?.token) localStorage.setItem("token", data.token);
+      if (data?.user) localStorage.setItem("user", JSON.stringify(data.user));
+
+       const token = data?.token;
+         if (token) {
+        // Redirect to PaintPal native app via deep link
+        window.location.href = `paintpal://login?authToken=${token}`;
+      } else {
+        console.error("No token returned from server");
+      }
+      
+
+    },
+    onError: (err: any) => {
+      console.error("Signup error:", err);
+      const resp = err?.response?.data;
+
+      // shape: { errors: ["msg1","msg2"] }
+      if (Array.isArray(resp?.errors)) {
+        resp.errors.forEach((m: string) => toast.error(m));
+        // set a general server message
+        setErrors((prev) => ({ ...prev, server: resp.errors.join(", ") }));
+        return;
+      }
+
+      // shape: { errors: { field1: ["msg"], field2: ["msg"] } }
+      if (resp?.errors && typeof resp.errors === "object") {
+        const newErrors: Record<string, string | null> = {};
+        Object.entries(resp.errors).forEach(([k, v]) => {
+          const msg = Array.isArray(v) ? v.join(" ") : String(v);
+          newErrors[k] = msg;
+          toast.error(msg);
+        });
+        setErrors((prev) => ({ ...prev, ...newErrors }));
+        return;
+      }
+
+      // single message field
+      if (resp?.message) {
+        toast.error(resp.message);
+        setErrors((prev) => ({ ...prev, server: String(resp.message) }));
+        return;
+      }
+
+      // fallback
+      toast.error("Signup failed");
+    },
+  });
+
+  // Validation helpers
+  const usernameValid = (v: string) => /^[A-Za-z0-9_]+$/.test(v);
+  const passwordValid = (v: string) =>
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/.test(v);
+  const dobInPast = (v: string) => {
+    if (!v) return false;
+    const d = new Date(v);
+    if (Number.isNaN(d.getTime())) return false;
+    return d.getTime() < Date.now();
+  };
+
+  const validateForm = () => {
+    const newErrors: Record<string, string | null> = {};
+    if (!form.firstName) newErrors.firstName = "First name is required";
+    if (!form.lastName) newErrors.lastName = "Last name is required";
+
+    if (!form.username) newErrors.username = "Username is required";
+    else if (!usernameValid(form.username))
+      newErrors.username =
+        "Username can only contain letters, numbers, and underscores";
+
+    if (!form.email) newErrors.email = "Email is required";
+
+    if (!form.password) newErrors.password = "Password is required";
+    else if (!passwordValid(form.password))
+      newErrors.password =
+        "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character";
+
+    if (form.confirmPassword !== form.password)
+      newErrors.confirmPassword = "Passwords do not match";
+
+    if (form.dateOfBirth && !dobInPast(form.dateOfBirth))
+      newErrors.dateOfBirth = "Date of birth must be in the past";
+
+    return newErrors;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
     setForm((prev) => ({ ...prev, [id]: value }));
+    setErrors((prev) => ({ ...prev, [id]: null }));
   };
 
-  const handleNext = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!agree) return alert("Please agree to the terms.");
-    if (!form.firstName || !form.lastName || !form.email || !form.password)
-      return alert("Please fill in all required fields.");
+    const validation = validateForm();
+    const hasErrors = Object.values(validation).some(Boolean);
+    if (hasErrors) {
+      setErrors(validation);
+      const first = Object.values(validation).find(Boolean);
+      if (first) toast.error(first as string);
+      return;
+    }
 
-    updateData(form); // Save to context
-    navigate("/plan");
-    scrollTo(0, 0);
+    const payload = {
+      firstName: form.firstName,
+      lastName: form.lastName,
+      username: form.username,
+      email: form.email,
+      password: form.password,
+      confirmPassword: form.confirmPassword,
+      dateOfBirth: form.dateOfBirth,
+      location: form.location,
+      phoneNumber: form.phoneNumber,
+    };
+
+    mutate(payload);
+  };
+
+  const openDatePicker = () => {
+    if (!dobRef.current) return;
+    setType("date");
+    const el: any = dobRef.current;
+    if (typeof el.showPicker === "function") {
+      el.showPicker();
+    } else {
+      dobRef.current.focus();
+    }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg">
-        {/* Video Header */}
         <div className="relative w-full h-48">
           <video
             src={authheader}
@@ -54,7 +174,6 @@ const SignUp = () => {
           />
         </div>
 
-        {/* Header */}
         <div className="mt-3 px-6 py-3">
           <h2 className="text-xl font-semibold text-gray-800">
             Create your PaintPal account
@@ -65,12 +184,10 @@ const SignUp = () => {
           </p>
         </div>
 
-        {/* Form */}
         <form
-          onSubmit={handleNext}
+          onSubmit={handleSubmit}
           className="grid grid-cols-2 gap-y-8 gap-x-3 px-6 pb-6 mt-4"
         >
-          {/* First Name */}
           <div className="relative">
             <input
               type="text"
@@ -86,9 +203,11 @@ const SignUp = () => {
             >
               First name
             </label>
+            {errors.firstName && (
+              <p className="text-sm text-red-600 mt-2">{errors.firstName}</p>
+            )}
           </div>
 
-          {/* Last Name */}
           <div className="relative">
             <input
               type="text"
@@ -104,9 +223,11 @@ const SignUp = () => {
             >
               Last name
             </label>
+            {errors.lastName && (
+              <p className="text-sm text-red-600 mt-2">{errors.lastName}</p>
+            )}
           </div>
 
-          {/* Username */}
           <div className="col-span-2">
             <div className="relative">
               <input
@@ -124,12 +245,14 @@ const SignUp = () => {
                 Username
               </label>
             </div>
+            {errors.username && (
+              <p className="text-sm text-red-600 mt-2">{errors.username}</p>
+            )}
             <p className="text-sm text-gray-600 mt-2">
               Username can't be changed after account creation
             </p>
           </div>
 
-          {/* Email */}
           <div className="relative col-span-2">
             <input
               type="email"
@@ -145,19 +268,22 @@ const SignUp = () => {
             >
               Email address
             </label>
+            {errors.email && (
+              <p className="text-sm text-red-600 mt-2">{errors.email}</p>
+            )}
           </div>
 
-          {/* Date of Birth */}
           <div className="relative">
             <input
               id="dateOfBirth"
+              ref={dobRef}
               type={type}
               value={form.dateOfBirth}
               onChange={handleChange}
               onFocus={() => setType("date")}
               onBlur={(e) => !e.target.value && setType("text")}
               placeholder="dd/mm/yy"
-              className="peer w-full border border-gray-400 rounded-lg pl-3 pr-10 py-3 outline-none"
+              className="peer w-full border border-gray-400 rounded-lg pl-3 pr-10 py-3 outline-none no-native-icon"
             />
             <label
               htmlFor="dateOfBirth"
@@ -166,12 +292,17 @@ const SignUp = () => {
               Date of Birth
             </label>
             <Calendar
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"
+              onClick={openDatePicker}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 cursor-pointer"
               size={20}
+              role="button"
+              tabIndex={0}
             />
+            {errors.dateOfBirth && (
+              <p className="text-sm text-red-600 mt-1">{errors.dateOfBirth}</p>
+            )}
           </div>
 
-          {/* Location */}
           <div className="relative">
             <input
               type="text"
@@ -189,7 +320,23 @@ const SignUp = () => {
             </label>
           </div>
 
-          {/* Password */}
+          <div className="relative col-span-2">
+            <input
+              type="text"
+              id="phoneNumber"
+              value={form.phoneNumber}
+              onChange={handleChange}
+              placeholder="phone number"
+              className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
+            />
+            <label
+              htmlFor="phoneNumber"
+              className="absolute -top-2 left-3 bg-white px-1 text-gray-500 text-sm"
+            >
+              Phone number
+            </label>
+          </div>
+
           <div className="relative col-span-2">
             <input
               type={showPassword ? "text" : "password"}
@@ -213,9 +360,11 @@ const SignUp = () => {
             >
               {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
+            {errors.password && (
+              <p className="text-sm text-red-600 mt-2">{errors.password}</p>
+            )}
           </div>
 
-          {/* Confirm Password */}
           <div className="relative col-span-2">
             <input
               type={showConfirmPassword ? "text" : "password"}
@@ -239,9 +388,13 @@ const SignUp = () => {
             >
               {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
+            {errors.confirmPassword && (
+              <p className="text-sm text-red-600 mt-2">
+                {errors.confirmPassword}
+              </p>
+            )}
           </div>
 
-          {/* Terms Switch */}
           <div className="col-span-2 flex items-center gap-3 mt-2">
             <button
               type="button"
@@ -264,13 +417,13 @@ const SignUp = () => {
             </p>
           </div>
 
-          {/* Submit */}
           <div className="col-span-2 mt-2 border-t border-gray-300 py-6">
             <button
               type="submit"
               className="w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition"
+              disabled={status === "pending"}
             >
-              Next
+              {status === "pending" ? "Signing up..." : "Sign up"}
             </button>
           </div>
         </form>

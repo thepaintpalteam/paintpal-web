@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
 import crown from "../../../assets/paintpal/svgs/crown.svg";
-import { useNavigate } from "react-router-dom";
 import { useGetSubscriptions } from "../../../hooks/useQueries";
 
 const plans = [
@@ -33,7 +32,7 @@ const plans = [
 ];
 
 const Yearly = () => {
-  const navigate = useNavigate();
+  
   const { data: subData, status } = useGetSubscriptions();
 
   if (status === "pending") {
@@ -58,7 +57,7 @@ const Yearly = () => {
             <div key={idx} className="rounded-lg flex border flex-col">
               {/* Header */}
               <div
-                className={`${plan.bg} px-6 pt-10 pb-6 rounded-t-lg flex flex-col h-[320px] relative`}
+                className={`${plan.bg} px-6 pt-10 pb-6 rounded-t-lg flex flex-col h-[230px] relative`}
               >
                 {/* Crown for Pro & Advance */}
                 {(plan.name.includes("Pro") ||
@@ -84,7 +83,7 @@ const Yearly = () => {
                     {apiPlan ? `/ ${apiPlan.billingPeriod}` : ""}
                   </span>
                 </div>
-                <button
+                {/* <button
                   onClick={() => {
                     // Save selected plan to localStorage
                     localStorage.setItem(
@@ -104,7 +103,7 @@ const Yearly = () => {
                   className={`mt-6 w-full py-3 rounded-lg font-medium transition ${plan.buttonStyle}`}
                 >
                   {plan.buttonText}
-                </button>
+                </button> */}
               </div>
 
               {/* Features */}

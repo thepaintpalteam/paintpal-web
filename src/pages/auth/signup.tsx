@@ -349,7 +349,7 @@ const SignUp = () => {
             <label
               htmlFor="password"
               className="absolute left-3 -top-2 bg-white px-1 text-gray-500 text-sm transition-all 
-             peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400"
+             peer-placeholder-shown:top-1.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400"
             >
               Password
             </label>
@@ -377,7 +377,7 @@ const SignUp = () => {
             <label
               htmlFor="confirmPassword"
               className="absolute left-3 -top-2  bg-white px-1 text-gray-500 text-sm transition-all 
-             peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400"
+             peer-placeholder-shown:top-1.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400"
             >
               Confirm Password
             </label>

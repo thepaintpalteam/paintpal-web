@@ -6,6 +6,8 @@ import authServices from "../../services/authServices";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { LoginT } from "../../type";
+//import { signInWithPopup } from "firebase/auth";
+//import { auth, googleProvider } from "../../lib/firebase";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -35,6 +37,17 @@ const Login = () => {
     },
   });
 
+  // // mutation to exchange firebase token with backend
+  // const { mutate: exchangeFirebaseToken } = useMutation({
+  //   mutationFn: (payload: { firebaseToken: string }) => authServices.FirebaseLogin(payload),
+  //   onSuccess: (data: any) => {
+  //     toast.success("Logged in via Firebase");
+  //     const token = data?.token;
+  //     if (token) window.location.href = `paintpal://login?authToken=${token}`;
+  //   },
+  //   onError: () => toast.error("Firebase login failed"),
+  // });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
@@ -43,6 +56,17 @@ const Login = () => {
     e.preventDefault();
     mutate(formData);
   };
+
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     const result = await signInWithPopup(auth, googleProvider);
+  //     const firebaseToken = await result.user.getIdToken();
+  //     exchangeFirebaseToken({ firebaseToken });
+  //   } catch (err: any) {
+  //     console.error("Google sign-in error:", err);
+  //     toast.error(err?.message || err?.code || "Google sign-in failed");
+  //   }
+  // };
 
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
@@ -162,6 +186,7 @@ const Login = () => {
           <div className="flex flex-col gap-3">
             <button
               type="button"
+             // onClick={handleGoogleSignIn}
               className="w-full border-2 border-[#5FBF92] py-3 rounded-lg font-semibold text-gray-700 flex items-center justify-center gap-2 hover:bg-gray-50"
             >
               <img

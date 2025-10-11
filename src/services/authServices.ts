@@ -35,12 +35,26 @@ const ResetPassword  = async (payload: ResetPasswordT) => {
   return res.data;
 };
 
+
+const FirebaseLogin = async (payload: { firebaseToken: string }) => {
+  const res = await apiClient.post('/Auth/firebase-login', payload);
+  // persist if backend returns token/user same as other endpoints
+  if (res?.data?.token) {
+    localStorage.setItem('token', res.data.token);
+  }
+  if (res?.data?.user) {
+    localStorage.setItem('user', JSON.stringify(res.data.user));
+  }
+  return res.data;
+};
+
 const authServices = {
  Login,
  ChangePassword,
  RequestPassword,
  ResetPassword,
  SignUp,
+ FirebaseLogin,
 };
 
 export default authServices;

@@ -12,11 +12,11 @@ const Payment = () => {
   const stripe = useStripe();
   const elements = useElements();
 
-  // State for selected payment method
-  const [method, setMethod] = useState<"card" | "bank" | "code">("card");
-  //const [referenceCode, setReferenceCode] = useState("");
 
-  // Payment handler
+  const [method, setMethod] = useState<"card" | "bank" | "code">("card");
+  
+
+
   const handlePay = async () => {
     if (method === "card") {
       if (!stripe || !elements) return;

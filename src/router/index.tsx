@@ -12,7 +12,7 @@ import JoinAsGuest from "../pages/auth/joinasguest";
 import EventPrice from "../pages/auth/eventprice";
 import Success from "../pages/auth/success";
 import JoinCall from "../pages/auth/join-call";
-import PaymentWrapper from "../pages/auth/paymentwrapper";
+//import PaymentWrapper from "../pages/auth/paymentwrapper";
 
 const router = createBrowserRouter([
   {
@@ -44,14 +44,14 @@ const router = createBrowserRouter([
       </AuthPageLayout>
     ),
   },
-  {
-    path: "/payment",
-    element: (
-      <AuthPageLayout>
-        <PaymentWrapper />
-      </AuthPageLayout>
-    ),
-  },
+  // {
+  //   path: "/payment",
+  //   element: (
+  //     <AuthPageLayout>
+  //       <PaymentWrapper />
+  //     </AuthPageLayout>
+  //   ),
+  // },
   {
     path: "/forgot-password",
     element: (

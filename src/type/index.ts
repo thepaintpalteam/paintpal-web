@@ -38,4 +38,6 @@ export interface UserRegistration {
   dateOfBirth: string; // ISO string "2025-09-30T16:07:38.944Z"
   location: string;
   phoneNumber: string;
+  selectedPlan?: string;
+  paymentMethod?: PaymentMethod;
 }

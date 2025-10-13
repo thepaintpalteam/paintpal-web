@@ -10,7 +10,7 @@ const Profit = () => {
             PaintPal for Nonprofits
           </h1>
           <p className="text-md lg:text-md text-gray-700 lg:leading-10">
-           As a nonprofit supporting neurodivergent communities, you understand the transformative power of creative expression and                  inclusive social experiences. Eligible nonprofit organisations dedicated to neurodivergent support get their own discounted                version of PaintPal, specially designed for hosting therapeutic art sessions that build community, confidence, and connection.
+            As a nonprofit supporting neurodivergent communities, you understand the transformative power of creative expression and inclusive social experiences. Eligible nonprofit organisations dedicated to neurodivergent support get their own discounted version of PaintPal, specially designed for hosting therapeutic art sessions that build community, confidence, and connection.
           </p>
 
           {/* Buttons */}

@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useSignup } from "../../context/SignupContext";
-import { UserRegistration } from "../../type";
+
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 
 const Payment = () => {
   const location = useLocation();
   const { price, currency } = location.state || {};
-  const { data, updateData } = useSignup();
+  
 
   const stripe = useStripe();
   const elements = useElements();
@@ -42,12 +41,8 @@ const Payment = () => {
       if (result.error) {
         alert("Payment failed: " + result.error.message);
       } else if (result.paymentIntent?.status === "succeeded") {
-        updateData({ paymentMethod: { stripePaymentMethodId: result.paymentIntent.id } });
-        const payload: UserRegistration = {
-          ...data,
-          paymentMethod: { stripePaymentMethodId: result.paymentIntent.id },
-        } as UserRegistration;
-        console.log("FINAL PAYLOAD:", payload);
+     
+      
         alert("Payment successful!");
       }
     }

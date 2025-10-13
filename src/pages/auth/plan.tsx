@@ -3,7 +3,6 @@ import { Check, Star, Lock, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
 import { useGetSubscriptions } from "../../hooks/useQueries";
-import { useSignup } from "../../context/SignupContext";
 
 const Plan = () => {
   const [selected, setSelected] = useState<string>(() => {
@@ -55,7 +54,6 @@ const Plan = () => {
     });
   }, [subData]);
 
-  const { updateData } = useSignup();
 
   const handleNext = () => {
     if (!selected) return;
@@ -66,8 +64,7 @@ const Plan = () => {
     );
     if (!selectedPlan) return;
 
-    // Send only the numeric plan ID to context
-    updateData({ selectedPlan: selectedPlan.plan }); // plan: 2, etc.
+
 
     navigate("/payment", {
     state: {

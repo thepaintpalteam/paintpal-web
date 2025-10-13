@@ -15,9 +15,7 @@ const Header = () => {
 
           {/* Paragraph */}
           <p className="mt-6 text-md sm:text-lg text-gray-600 leading-relaxed">
-            Host virtual painting parties with live music, real-time
-            collaboration, and shared experiences. Create memories, one brush
-            stroke at a time.
+           Host virtual painting events with real-time collaboration shared experiences and live music. Create memories one brushstroke at a time.
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-4 mt-6">

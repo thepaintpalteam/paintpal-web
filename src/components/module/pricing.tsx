@@ -9,7 +9,7 @@ const Pricing = () => {
     <div id="pricing" className="lg:-mt-64 py-6 mx-4 lg:mx-auto lg:max-w-[1200px] ">
       {/* Heading */}
       <h1 className="text-lg text-gray-900">
-        <span className="text-[#5FBF92]">Save from 16%</span> with yearly
+        <span className="text-[#5FBF92]">Save from 5%</span> with yearly
       </h1>
 
       {/* Tabs */}

@@ -40,7 +40,7 @@ const Simple = () => {
              onClick={() =>
                   window.open("https://paintpal.framer.website/", "_blank")
                 }
-             className="bg-white border border-gray-300 py-2 px-4 w-32 lg:w-full lg:whitespace-nowrap font-medium text-base sm:text-lg rounded-lg hover:bg-gray-50 transition">
+             className="bg-white border border-gray-300 py-2 px-4 w-32 lg:w-full whitespace-nowrap font-medium text-base sm:text-lg rounded-lg hover:bg-gray-50 transition">
               Get in touch
             </button>
           </div>

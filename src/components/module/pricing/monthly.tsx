@@ -77,7 +77,7 @@ const plans = [
 const Monthly = () => {
 
   return (
-    <div className="lg:py-10 lg:mx-auto lg:max-w-[1500px] px-2">
+    <div className="py-10 lg:mx-auto lg:max-w-[1500px] px-2">
       {/* Pricing grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {plans.map((plan, idx) => (

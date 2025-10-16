@@ -15,10 +15,18 @@ const Profit = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <button className="bg-[#5FBF92] py-3 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
+            <button
+             onClick={() =>
+                  window.open("https://paintpal.framer.website/", "_blank")
+                }
+             className="bg-[#5FBF92] py-3 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
               Apply for PaintPal nonprofits
             </button>
-            <button className="bg-white border border-gray-300 px-6 py-3 font-medium text-md rounded-lg hover:bg-gray-50 transition">
+            <button
+             onClick={() =>
+                  window.open("https://paintpal.framer.website/", "_blank")
+                }
+             className="bg-white border border-gray-300 px-6 py-3 font-medium text-md rounded-lg hover:bg-gray-50 transition">
               Check for eligibility
             </button>
           </div>

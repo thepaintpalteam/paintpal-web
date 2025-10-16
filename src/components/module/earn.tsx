@@ -23,7 +23,7 @@ const Earn = () => {
       <div className="bg-[#5FBF92]/10 rounded-2xl py-10 px-6 lg:px-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Section */}
-          <div className="flex flex-col gap-4 w-full lg:w-1/2 text-center lg:text-left">
+          <div data-aos="fade-right" className="flex flex-col gap-4 w-full lg:w-1/2 text-center lg:text-left">
             <h1 className="text-xl lg:text-2xl font-semibold text-gray-900">
               Earn while you create
             </h1>
@@ -33,7 +33,11 @@ const Earn = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-              <button className="bg-[#5FBF92] py-2 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
+              <button
+               onClick={() =>
+                  window.open("https://paintpal.framer.website/", "_blank")
+                }
+               className="bg-[#5FBF92] py-2 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
                 Watch our video
               </button>
             </div>
@@ -54,7 +58,7 @@ const Earn = () => {
       <div className="my-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 w-full">
         <div className="bg-[#FFEFEB] rounded-2xl py-12 px-6 flex flex-col items-center gap-8">
           {/* Text Section */}
-          <div className="flex-1 text-center lg:w-[300px]">
+          <div data-aos="fade-down" className="flex-1 text-center lg:w-[300px]">
             <h1 className="text-xl lg:text-2xl font-semibold text-gray-900">
               Save your art
             </h1>
@@ -75,7 +79,7 @@ const Earn = () => {
 
         <div className="bg-[#FFF4E4] rounded-2xl py-12 px-6 flex flex-col items-center gap-8">
           {/* Text Section */}
-          <div className="flex-1 text-center lg:w-[300px]">
+          <div data-aos="fade-down" className="flex-1 text-center lg:w-[300px]">
             <h1 className="text-xl lg:text-2xl font-semibold text-gray-900">
              Music meets creativity
             </h1>
@@ -100,7 +104,7 @@ const Earn = () => {
        <div className="bg-[#E9FBFF] rounded-2xl py-16 px-6 lg:px-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Section */}
-          <div className="flex flex-col gap-4 w-full lg:w-[400px] text-center lg:text-left">
+          <div data-aos="fade-right" className="flex flex-col gap-4 w-full lg:w-[400px] text-center lg:text-left">
             <h1 className="text-xl lg:text-2xl font-semibold text-gray-900">
               Invite your friends
             </h1>
@@ -109,7 +113,11 @@ const Earn = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-              <button className="bg-[#5FBF92] py-2 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
+              <button
+               onClick={() =>
+                  window.open("https://paintpal.framer.website/", "_blank")
+                }
+               className="bg-[#5FBF92] py-2 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
                 Watch our video
               </button>
             </div>

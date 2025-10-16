@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+
 import chat from "../../assets/paintpal/svgs/chat.svg";
 import creative from "../../assets/paintpal/svgs/creative.svg";
 import host from "../../assets/paintpal/svgs/host.svg";
@@ -9,7 +9,7 @@ import variant from "../../assets/paintpal/svgs/variant.svg";
 import video from "../../assets/paintpal/svgs/video.svg";
 
 const Features = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   return (
     <div
       id="features"
@@ -78,10 +78,9 @@ const Features = () => {
 
       <div className="flex items-center justify-center mt-16">
         <button
-          onClick={() => {
-            navigate("/signup");
-            scrollTo(0, 0);
-          }}
+           onClick={() =>
+                  window.open("https://paintpal.framer.website/", "_blank")
+                }
           className="bg-[#5FBF92]   py-2.5 px-3  font-medium text-lg rounded-lg hover:bg-[#4AA97D] transition"
         >
           Unlock unlimited access

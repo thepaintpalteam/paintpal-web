@@ -33,10 +33,14 @@ const Simple = () => {
 
           {/* Buttons */}
           <div className="flex  items-center gap-3 " >
-            <button className="bg-[#5FBF92] py-2 px-4 w-32 lg:w-full font-medium text-base sm:text-lg rounded-lg hover:bg-[#4AA97D] transition">
+            {/* <button className="bg-[#5FBF92] py-2 px-4 w-32 lg:w-full font-medium text-base sm:text-lg rounded-lg hover:bg-[#4AA97D] transition">
               Sign up
-            </button>
-            <button className="bg-white border border-gray-300 py-2 px-4 w-32 lg:w-full lg:whitespace-nowrap font-medium text-base sm:text-lg rounded-lg hover:bg-gray-50 transition">
+            </button> */}
+            <button
+             onClick={() =>
+                  window.open("https://paintpal.framer.website/", "_blank")
+                }
+             className="bg-white border border-gray-300 py-2 px-4 w-32 lg:w-full lg:whitespace-nowrap font-medium text-base sm:text-lg rounded-lg hover:bg-gray-50 transition">
               Get in touch
             </button>
           </div>

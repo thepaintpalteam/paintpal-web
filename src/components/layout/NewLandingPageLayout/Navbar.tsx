@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../../../assets/paintpal/images/logo.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -20,7 +20,7 @@ const handleScroll = (id: string) => {
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   return (
     <div className=" py-2 lg:max-w-[1200px] lg:mx-auto  ">
@@ -52,15 +52,21 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <div className="flex items-center  lg:gap-8 cursor-pointer group">
             <div className="flex items-center gap-4">
-              <button
+              {/* <button
                 onClick={() => navigate("/login")}
                 className="bg-white border border-gray-300 lg:w-32 py-2 font-medium px-4 text-md  rounded-lg "
               >
                 Login
-              </button>
-              <button  onClick={() => navigate("/signup")} className="bg-[#5FBF92] py-3 hidden lg:block font-medium  px-4 text-md  rounded-lg ">
+              </button> */}
+              <button
+                onClick={() =>
+                  window.open("https://paintpal.framer.website/", "_blank")
+                }
+                className="bg-[#5FBF92] py-3 hidden lg:block font-medium px-4 text-md rounded-lg hover:bg-[#4BAE82] transition-colors duration-200"
+              >
                 Get started
               </button>
+
               <div
                 className="lg:hidden block cursor-pointer"
                 onClick={() => setShowMenu(true)}

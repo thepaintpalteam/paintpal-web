@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Yearly from "./pricing/yearly";
+import Monthly from "./pricing/monthly";
 
 
 const Pricing = () => {
-  const [billingCycle, setBillingCycle] = useState("yearly");
+  const [billingCycle, setBillingCycle] = useState("monthly");
 
   return (
     <div id="pricing" className="lg:-mt-64 py-6 mx-4 lg:mx-auto lg:max-w-[1200px] ">
@@ -39,10 +40,10 @@ const Pricing = () => {
       </div>
 
       {/* Example Pricing Display */}
-      <div className="mt-2">
+      <div className="">
         {billingCycle === "monthly" ? (
           <div>
-            <Yearly />
+            <Monthly />
           </div>
         ) : (
           <div>

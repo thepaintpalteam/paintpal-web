@@ -20,7 +20,7 @@ const Earn = () => {
       </div>
 
       {/* Earn while you create */}
-      <div className="bg-[#5FBF92]/10 rounded-2xl py-10 px-6 lg:px-24">
+      <div className="bg-[#5FBF92]/10 rounded-2xl py-14 px-6 lg:px-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Section */}
           <div data-aos="fade-right" className="flex flex-col gap-4 w-full lg:w-1/2 text-center lg:text-left">
@@ -101,7 +101,7 @@ const Earn = () => {
       </div>
 
 
-       <div className="bg-[#E9FBFF] rounded-2xl py-16 px-6 lg:px-24">
+       <div className="bg-[#E9FBFF] rounded-2xl py-14 px-6 lg:px-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Section */}
           <div data-aos="fade-right" className="flex flex-col gap-4 w-full lg:w-[400px] text-center lg:text-left">

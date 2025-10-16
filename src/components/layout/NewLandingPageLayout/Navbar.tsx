@@ -62,13 +62,13 @@ const Navbar = () => {
                 onClick={() =>
                   window.open("https://paintpal.framer.website/", "_blank")
                 }
-                className="bg-[#5FBF92] py-3 hidden lg:block font-medium px-4 text-md rounded-lg hover:bg-[#4BAE82] transition-colors duration-200"
+                className="bg-[#5FBF92] py-3 hidden md:block font-medium px-4 text-md rounded-lg hover:bg-[#4BAE82] transition-colors duration-200"
               >
                 Get started
               </button>
 
               <div
-                className="lg:hidden block cursor-pointer"
+                className="md:hidden block cursor-pointer"
                 onClick={() => setShowMenu(true)}
               >
                 <AiOutlineMenu className=" text-xl" />
@@ -91,7 +91,10 @@ const Navbar = () => {
                 {menus.map((menu, index) => (
                   <button key={index} className="border-b-2 py-4 px-8">
                     <div className="flex items-center justify-between">
-                      <span className="text-lg"> {menu.name}</span>
+                      <span  onClick={() => {
+                  handleScroll(menu.id);
+                  setShowMenu(false);
+                }} className="text-lg"> {menu.name}</span>
                     </div>
                   </button>
                 ))}

@@ -30,13 +30,13 @@ const Navbar = () => {
                 </NavLink>
               ) : isSignUpPage ? (
                 <NavLink to="/login">
-                  <button className="bg-[#5FBF92] py-3 font-medium px-4 text-md rounded-lg">
+                  <button className="bg-[#5FBF92] py-3 font-medium px-4 text-lg rounded-lg">
                     Login
                   </button>
                 </NavLink>
               ) : (
                 <NavLink to="/login">
-                  <button className="bg-[#5FBF92] py-3 font-medium px-4 text-md rounded-lg">
+                  <button className="bg-[#5FBF92] py-3 font-medium px-4 text-lg rounded-lg">
                     Login
                   </button>
                 </NavLink>

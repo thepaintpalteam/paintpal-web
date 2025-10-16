@@ -32,7 +32,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center lg:max-w-[1300px] lg:mx-auto " data-aos="fade-up">
+      <div className="flex items-center justify-center lg:max-w-[1300px] lg:mx-auto ">
         <img
           src={header}
           alt="PaintPal header"

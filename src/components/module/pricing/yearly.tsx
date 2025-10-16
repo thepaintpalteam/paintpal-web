@@ -30,7 +30,7 @@ const plans = [
     name: "PaintPal Pro",
     description:
       "Host as many painting events as you want, get paid for your sessions, and join any event that catches your eye.",
-    price: "GBP£5.994",
+    price: "GBP£113.89",
     priceDesc: "/month for one person",
     buttonText: "Start free trial",
     buttonStyle: "bg-[#5FBF92] text-white hover:bg-[#4AA97D]",
@@ -53,7 +53,7 @@ const plans = [
   {
     name: "PaintPal Advance",
     description: "Save some money when you subscribe to PaintPal for a year",
-    price: "GBP£29.99",
+    price: "GBP£569.89",
     priceDesc: "/year per person",
     buttonText: "Start free trial",
     buttonStyle: "bg-[#5FBF92] text-white hover:bg-[#4AA97D]",

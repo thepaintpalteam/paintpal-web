@@ -26,8 +26,8 @@ const Simple = () => {
 
           {/* Play + Text */}
           <div className="flex flex-col sm:flex-row items-center gap-3 mb-4 text-center">
-            <span className="text-xl sm:text-2xl md:text-3xl font-semibold leading-snug">
-              Watch the <br className="sm:hidden" /> walkthrough
+            <span className="text-2xl font-semibold leading-snug">
+              Watch the <br className="hidden lg:block" /> walkthrough
             </span>
           </div>
 

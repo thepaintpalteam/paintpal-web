@@ -123,7 +123,7 @@ const FAQs = () => {
                     onClick={() => handleToggle(index)}
                     className="flex w-full items-center justify-between text-left"
                   >
-                    <h2 className="text-md lg:text-lg text-[#3D3D3D] font-bold">
+                    <h2 className="text-md lg:text-lg font-bold">
                       {question.title}
                     </h2>
                     {openIndex === index ? (

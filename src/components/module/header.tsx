@@ -8,8 +8,8 @@ const Header = () => {
       <div className="flex justify-center items-center text-center px-6 py-14" data-aos="fade-down">
         <div className="max-w-3xl flex flex-col justify-center items-center">
           {/* Title */}
-          <h1 className="text-3xl lg:text-7xl font-extrabold text-gray-900 leading-snug lg:leading-[80px]">
-            Paint & Connect <br className="hidden lg:block" /> Together
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-gray-900 leading-snug lg:leading-[80px]">
+            Paint & Connect <br /> Together
             Virtually
           </h1>
 

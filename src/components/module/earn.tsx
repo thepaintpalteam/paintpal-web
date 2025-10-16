@@ -23,7 +23,7 @@ const Earn = () => {
       <div className="bg-[#5FBF92]/10 rounded-2xl py-14 px-6 lg:px-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Section */}
-          <div data-aos="fade-right" className="flex flex-col gap-4 w-full lg:w-1/2 text-center lg:text-left">
+          <div  className="flex flex-col gap-4 w-full lg:w-1/2 text-center lg:text-left">
             <h1 className="text-xl lg:text-2xl font-semibold text-gray-900">
               Earn while you create
             </h1>
@@ -79,7 +79,7 @@ const Earn = () => {
 
         <div className="bg-[#FFF4E4] rounded-2xl py-12 px-6 flex flex-col items-center gap-8">
           {/* Text Section */}
-          <div data-aos="fade-down" className="flex-1 text-center lg:w-[300px]">
+          <div  className="flex-1 text-center lg:w-[300px]">
             <h1 className="text-xl lg:text-2xl font-semibold text-gray-900">
              Music meets creativity
             </h1>
@@ -104,7 +104,7 @@ const Earn = () => {
        <div className="bg-[#E9FBFF] rounded-2xl py-14 px-6 lg:px-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Section */}
-          <div data-aos="fade-right" className="flex flex-col gap-4 w-full lg:w-[400px] text-center lg:text-left">
+          <div className="flex flex-col gap-4 w-full lg:w-[400px] text-center lg:text-left">
             <h1 className="text-xl lg:text-2xl font-semibold text-gray-900">
               Invite your friends
             </h1>

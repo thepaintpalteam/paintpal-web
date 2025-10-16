@@ -6,12 +6,12 @@ const FAQs = () => {
 
   const questions = [
     {
-      title: "Can I use PaintPal for free?",
+      title: "What exactly is PaintPal?",
       content:
-        "PaintPal Free is available to anyone. However, if you want to use PaintPal for work or a side hustle, you can upgrade to Paintpal Pro to unlock premium features, such as unlimited templates and Brand Kits. And if you need to collaborate with colleagues? ",
+        "PaintPal is a virtual space for digital painting and creative events. It’s a single platform where you can paint by yourself, host or join live art events with others, and even earn money by running your own ticketed workshops.",
     },
     {
-      title: "If I add a team member, will they be able to see all my designs?",
+      title: "Who is PaintPal for?",
       content:
         "PaintPal Free is available to anyone. However, if you want to use PaintPal for work or a side hustle, you can upgrade to Paintpal Pro to unlock premium features, such as unlimited templates and Brand Kits. And if you need to collaborate with colleagues? ",
     },
@@ -21,14 +21,14 @@ const FAQs = () => {
         "PaintPal Free is available to anyone. However, if you want to use PaintPal for work or a side hustle, you can upgrade to Paintpal Pro to unlock premium features, such as unlimited templates and Brand Kits. And if you need to collaborate with colleagues? ",
     },
     {
-      title: "What is the difference between PaintPal Pro and PantPal Advance?",
+      title: "How do I make money on PaintPal?",
       content:
-        "PaintPal Free is available to anyone. However, if you want to use PaintPal for work or a side hustle, you can upgrade to Paintpal Pro to unlock premium features, such as unlimited templates and Brand Kits. And if you need to collaborate with colleagues? ",
+        "With our Individual Plan, you can host paid, ticketed events and monetise your creative skills. You set the ticket price, and we handle the platform. PaintPal takes a 25% commission on each transaction from paid events you host.",
     },
     {
-      title: "How long is my free PaintPal Pro or PaintPal Advance trial?",
+      title: "How is PaintPal different from other art apps or event platforms?
       content:
-        "PaintPal Free is available to anyone. However, if you want to use PaintPal for work or a side hustle, you can upgrade to Paintpal Pro to unlock premium features, such as unlimited templates and Brand Kits. And if you need to collaborate with colleagues? ",
+        "Our key advantage is our hybrid model. While other platforms focus on either digital painting or virtual events, PaintPal is the first to combine digital painting tools, event hosting, and creator monetisation features into one seamless experience.",
     },
      {
       title: "What if I work for a nonprofit?",
@@ -36,15 +36,15 @@ const FAQs = () => {
         "PaintPal Free is available to anyone. However, if you want to use PaintPal for work or a side hustle, you can upgrade to Paintpal Pro to unlock premium features, such as unlimited templates and Brand Kits. And if you need to collaborate with colleagues? ",
     },
      {
-      title: "What if I am a student or teacher?",
+      title: "As a host, can I see everyone's canvas at the same time?",
       content:
-        "PaintPal Free is available to anyone. However, if you want to use PaintPal for work or a side hustle, you can upgrade to Paintpal Pro to unlock premium features, such as unlimited templates and Brand Kits. And if you need to collaborate with colleagues? ",
+        "As a host, you can interact with your attendees and encourage them to share their screens when they feel comfortable. This allows you to offer guidance, answer questions, and foster a sense of community, just like in a physical workshop. You won't automatically see everyone's private canvas, respecting each user's creative space.",
     },
 
       {
-      title: "What payment methods can I use?",
+      title: "As an event host, how do I receive my earnings?",
       content:
-        "PaintPal Free is available to anyone. However, if you want to use PaintPal for work or a side hustle, you can upgrade to Paintpal Pro to unlock premium features, such as unlimited templates and Brand Kits. And if you need to collaborate with colleagues? ",
+        "We have built a straightforward payment system. Once your event is complete, your earnings (minus the platform's commission) will be processed and sent to your provided bank account.",
     },  {
       title: "How does the billing work?",
       content:

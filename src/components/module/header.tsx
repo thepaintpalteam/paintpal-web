@@ -9,7 +9,7 @@ const Header = () => {
         <div className="max-w-3xl flex flex-col justify-center items-center">
           {/* Title */}
           <h1 className="text-5xl lg:text-7xl font-extrabold text-gray-900 leading-snug lg:leading-[80px]">
-            Paint & Connect <br /> Together
+            Paint & Connect <br className="hidden md:block" /> Together
             Virtually
           </h1>
 

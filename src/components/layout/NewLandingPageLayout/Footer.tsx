@@ -72,22 +72,8 @@ const Footer = () => {
                   >
                     Andriod
                   </li>
-                  <li
-                    onClick={() => {
-                      navigate("/");
-                      scrollTo(0, 0);
-                    }}
-                  >
-                    Windows
-                  </li>
-                  <li
-                    onClick={() => {
-                      navigate("/");
-                      scrollTo(0, 0);
-                    }}
-                  >
-                    Mac
-                  </li>
+                
+                 
                 </ul>
               </div>
 

@@ -326,7 +326,7 @@ const SignUp = () => {
               id="phoneNumber"
               value={form.phoneNumber}
               onChange={handleChange}
-              placeholder="phone number"
+              placeholder="Phone number"
               className="peer w-full border border-gray-400 rounded-lg px-3 py-3 outline-none"
             />
             <label
@@ -379,7 +379,7 @@ const SignUp = () => {
               className="absolute left-3 -top-2  bg-white px-1 text-gray-500 text-sm transition-all 
              peer-placeholder-shown:top-1.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400"
             >
-              Confirm Password
+              Confirm password
             </label>
             <button
               type="button"

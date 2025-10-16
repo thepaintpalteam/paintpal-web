@@ -130,9 +130,41 @@ const Footer = () => {
               </div>
               <div>
                 <div className="flex items-center gap-8">
-                  <img src={insta} />
-                  <img src={link} />
-                  <img src={x} />
+                  <a
+                    href="https://www.instagram.com/paintpal.io?igsh=eGd3NTM3NHlkbDJr&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={insta}
+                      alt="Instagram"
+                      className="w-6 h-6 hover:opacity-80 transition-opacity"
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/company/paintpal-io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={link}
+                      alt="LinkedIn"
+                      className="w-6 h-6 hover:opacity-80 transition-opacity"
+                    />
+                  </a>
+
+                  <a
+                    href="https://x.com/paintpal_io?s=21&t=af7FNzXuFcebWItsPY5dkw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={x}
+                      alt="X (Twitter)"
+                      className="w-6 h-6 hover:opacity-80 transition-opacity"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -141,7 +173,6 @@ const Footer = () => {
 
         {/***** Copyright Text */}
         <div>
-      
           <div className="max-w-[1400px] mx-auto border-t border-gray-300">
             <div className="flex flex-col lg:flex-row mx-12 items-center justify-between">
               <p className="py-5 text-sm text-gray-600 text-center">

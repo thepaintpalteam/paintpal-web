@@ -58,7 +58,7 @@ const Earn = () => {
       <div className="my-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 w-full">
         <div className="bg-[#FFEFEB] rounded-2xl py-12 px-6 flex flex-col items-center gap-8">
           {/* Text Section */}
-          <div data-aos="fade-down" className="flex-1 text-center lg:w-[300px]">
+          <div  className="flex-1 text-center lg:w-[300px]">
             <h1 className="text-xl lg:text-2xl font-semibold text-gray-900">
               Save your art
             </h1>

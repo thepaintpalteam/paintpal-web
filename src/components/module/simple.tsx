@@ -21,7 +21,7 @@ const Simple = () => {
         />
 
         {/* Overlay content */}
-        <div className="absolute bottom-6 w-full flex flex-col items-center px-4 " data-aos="fade-up">
+        <div className="absolute bottom-6 w-full flex flex-col items-center px-4 " >
           <img src={logo} className="w-16 sm:w-20 md:w-24 mb-4" alt="Logo" />
 
           {/* Play + Text */}

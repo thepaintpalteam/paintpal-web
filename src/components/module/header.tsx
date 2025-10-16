@@ -8,13 +8,13 @@ const Header = () => {
       <div className="flex justify-center items-center text-center px-6 py-14" data-aos="fade-down">
         <div className="max-w-3xl flex flex-col justify-center items-center">
           {/* Title */}
-          <h1 className="text-3xl lg:text-5xl font-semibold text-gray-900 leading-snug lg:leading-[50px]">
-            Sip, Paint & Connect <br className="hidden lg:block" /> Together
-            Online
+          <h1 className="text-3xl lg:text-7xl font-extrabold text-gray-900 leading-snug lg:leading-[80px]">
+            Paint & Connect <br className="hidden lg:block" /> Together
+            Virtually
           </h1>
 
           {/* Paragraph */}
-          <p className="mt-6 text-md sm:text-lg text-gray-600 leading-relaxed">
+          <p className="mt-6 text-md sm:text-lg text-gray-600 lg:leading-7">
            Host virtual painting events with real-time collaboration shared experiences and live music. Create memories one brushstroke at a time.
           </p>
 

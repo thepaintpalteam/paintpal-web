@@ -52,9 +52,9 @@ const plans = [
   },
   {
     name: "PaintPal Advance",
-    description: "Save some money when you subscribe to PaintPal for a year",
+      description: "Ideal for businesses seeking creative team bonding activities that inspire collaboration and boost morale.",
     price: "GBP£49.99",
-    priceDesc: "/year per person",
+    priceDesc: "/year per business",
     buttonText: "Start free trial",
     buttonStyle: "bg-[#5FBF92] text-white hover:bg-[#4AA97D]",
     bg: "bg-yellow-50",

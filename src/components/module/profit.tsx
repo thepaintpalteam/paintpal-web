@@ -15,13 +15,18 @@ const Profit = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <button
-             onClick={() =>
-                  window.open("https://paintpal.framer.website/", "_blank")
-                }
-             className="bg-[#5FBF92] py-3 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
-              Apply for PaintPal nonprofits
-            </button>
+           <button
+            onClick={() =>
+              window.open(
+                "mailto:hello@paintpal.io?subject=Discounted%20Access%20Application%20-%20[Your%20Organisation%20Name]",
+                "_blank"
+              )
+            }
+            className="bg-[#5FBF92] py-3 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition"
+          >
+            Apply for PaintPal Nonprofits
+          </button>
+
             <button
              onClick={() =>
                   window.open("https://paintpal.framer.website/", "_blank")

@@ -31,7 +31,7 @@ const plans = [
     description:
       "Host as many painting events as you want, get paid for your sessions, and join any event that catches your eye.",
     price: "GBP£113.89",
-    priceDesc: "/month for one person",
+    priceDesc: "/year for one person",
     buttonText: "Start free trial",
     buttonStyle: "bg-[#5FBF92] text-white hover:bg-[#4AA97D]",
     bg: "bg-green-100",

@@ -16,7 +16,7 @@ const plans = [
     features: [
       { text: "Unlimited solo paintings", available: true },
       { text: "Join 3 public painting events per month", available: true },
-      { text: "Host 3 free painting event per month (up to 5 participants)", available: true },
+      { text: "Host 3 free painting event per month (up to 10 participants)", available: true },
       { text: "Basic canvas tools and brushes", available: true },
       { text: "Live canvas viewing", available: true },
       { text: "Email art export", available: true },
@@ -38,7 +38,7 @@ const plans = [
     list: "Everything in Free, plus:",
     features: [
       { text: "Join unlimited public painting events", available: true },
-      { text: "Host unlimited painting events (up to 50 participants each)", available: true },
+      { text: "Host unlimited painting events (up to 150 participants each)", available: true },
       {
         text: "Integrated payment processing. Dedicated account manager (for high-volume hosts)",
         available: true,
@@ -69,10 +69,7 @@ const plans = [
         text: "Dedicated account manager (for high-volume hosts)",
         available: true,
       },
-      {
-        text: "Integrated payment processing. Dedicated account manager (for high-volume hosts)",
-        available: true,
-      },
+    
     ],
   },
 ];

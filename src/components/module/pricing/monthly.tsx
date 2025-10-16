@@ -8,7 +8,7 @@ const plans = [
     description:
       "Design anything and bring your ideas to life. No cost, just creativity",
     price: "GBP£0",
-    priceDesc: "/year for one person",
+    priceDesc: "/month for one person",
     buttonText: "Get started",
     buttonStyle: "bg-gray-500 text-white",
     bg: "bg-gray-200",
@@ -54,7 +54,7 @@ const plans = [
     name: "PaintPal Advance",
       description: "Ideal for businesses seeking creative team bonding activities that inspire collaboration and boost morale.",
     price: "GBP£49.99",
-    priceDesc: "/year per business",
+    priceDesc: "/month per business",
     buttonText: "Start free trial",
     buttonStyle: "bg-[#5FBF92] text-white hover:bg-[#4AA97D]",
     bg: "bg-yellow-50",

@@ -7,7 +7,7 @@ const MadeFor = () => {
   return (
     <div className="mt-32 pb-10 mx-4 lg:max-w-[1300px] flex flex-col justify-center items-center lg:mx-auto ">
       <div>
-        <h1 className="text-lg text-center font-semibold text-gray-900">
+        <h1 className="text-2xl text-center font-semibold text-gray-900">
           Made for everyone
         </h1>
       </div>

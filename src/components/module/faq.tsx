@@ -103,12 +103,12 @@ const FAQs = () => {
   };
 
   return (
-    <div id="faqs" className="py-16">
+    <div id="faqs" className="py-24">
       <div className="lg:max-w-[1200px] mx-4 lg:mx-auto">
         <div className="flex flex-col lg:flex-row items-start w-full px-10">
           {/* Left side */}
           <div className="w-full lg:w-1/3 mt-10">
-            <h1 className="font-semibold text-xl lg:text-2xl lg:leading-10">
+            <h1 className="font-semibold text-xl lg:text-4xl lg:leading-10">
               Frequently Asked <br className="hidden lg:block" />{" "}
               <span className="text-[#5FBF92]">Questions</span>
             </h1>

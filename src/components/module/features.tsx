@@ -13,7 +13,7 @@ const Features = () => {
   return (
     <div
       id="features"
-      className="lg:mb-64 mt-24 py-16 mx-4 lg:mx-auto lg:max-w-[1200px]  "
+      className="lg:mb-64 mt-24 py-32 mx-4 lg:mx-auto lg:max-w-[1200px]  "
     >
       <h1 className="text-3xl  font-semibold text-gray-900">Our features</h1>
 

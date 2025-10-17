@@ -2,7 +2,7 @@ import profit from "../../assets/paintpal/images/profit.png";
 
 const Profit = () => {
   return (
-    <div className="py-20 px-6 lg:px-12 mx-auto max-w-[1300px]">
+    <div className="py-48 px-6 lg:px-12 mx-auto max-w-[1300px]">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
         {/* Text Section */}
         <div className="flex flex-col gap-6 lg:w-[800px] text-center lg:text-left">

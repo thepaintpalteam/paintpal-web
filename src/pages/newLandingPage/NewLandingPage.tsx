@@ -9,6 +9,7 @@ import Profit from "../../components/module/profit";
 import FAQs from "../../components/module/faq";
 
 import Earn from "../../components/module/earn";
+import MadeFor from "../../components/module/madefor";
 
 const NewLandingPage = () => {
   return (
@@ -23,6 +24,8 @@ const NewLandingPage = () => {
           <Header />
             
         </div>
+
+        <MadeFor />
 
         <Simple />
 

@@ -3,10 +3,10 @@ import logo from "../../assets/paintpal/images/logo2.png";
 
 const Simple = () => {
   return (
-    <div id="how-it-works" className="mt-16 pb-16 mx-4 lg:max-w-[1300px] lg:mx-auto ">
+    <div id="how-it-works" className="mt-32 pb-16 mx-4 lg:max-w-[1300px] lg:mx-auto ">
       {/* Title */}
       <div>
-        <h1 className="text-2xl md:text-2xl lg:text-3xl text-center font-semibold text-gray-900">
+        <h1 className="text-2xl md:text-2xl lg:text-3xl text-center font-semibold text-gray-900 lg:leading-10">
           Simple stroke today, <br className="hidden lg:block" /> stunning
           masterpieces tomorrow
         </h1>

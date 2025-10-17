@@ -166,7 +166,7 @@ const Footer = () => {
               </p>
 
               <p className="py-5 text-sm text-gray-600 text-center">
-                Made with ❤️ for artists everywhere
+                Made with ❤️ for everyone
               </p>
             </div>
           </div>

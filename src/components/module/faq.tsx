@@ -25,7 +25,8 @@ const FAQs = () => {
       content: {
         text: "PaintPal is designed for a wide range of creative people, including:",
         list: [
-          "Hobbyist artists looking for a fun, relaxing outlet.",
+          "Neurodivergent creators who want a calm, flexible space to paint solo or socialise at their own pace.",
+          "Hobbyist artists looking for a fun, low-pressure way to unwind and express themselves.",
           "Art educators and workshop hosts who want to teach virtual classes.",
           "Corporate teams seeking new, wellness-focused team-building activities.",
           "Friends, families, and creative communities who want to connect and collaborate from a distance.",
@@ -104,7 +105,7 @@ const FAQs = () => {
 
   return (
     <div id="faqs" className="py-24">
-      <div className="lg:max-w-[1200px] mx-4 lg:mx-auto">
+      <div className="lg:max-w-[1300px] mx-4 lg:mx-auto">
         <div className="flex flex-col lg:flex-row items-start w-full px-10">
           {/* Left side */}
           <div className="w-full lg:w-1/3 mt-10">
@@ -141,17 +142,17 @@ const FAQs = () => {
                       ) : (
                         <>
                           {question.content.text && (
-                            <p className="mb-3 whitespace-pre-line">
+                            <p className="mb-3 whitespace-pre-line ">
                               {question.content.text}
                             </p>
                           )}
                           {question.content.list && (
-                            <ul className="list-disc list-inside space-y-2">
+                            <ul className="list-disc lg:whitespace-nowrap list-inside space-y-2">
                               {question.content.list.map((item, i) => {
                                 if (item.includes(":")) {
                                   const [boldPart, rest] = item.split(":");
                                   return (
-                                    <li key={i}>
+                                    <li key={i }>
                                       <span className="font-semibold">
                                         {boldPart}:
                                       </span>{" "}

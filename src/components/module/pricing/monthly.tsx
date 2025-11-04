@@ -121,21 +121,24 @@ const Monthly = () => {
             {/* Features */}
             <div>
               <ul className="space-y-3 mt-4 p-6">
-                <h3 className="text-lg font-semibold mb-4">{plan.list}</h3>
-                {plan.features.map((feature, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center text-gray-900 text-md"
-                  >
-                    {feature.available ? (
-                      <Check className="w-5 h-5 text-green-500 mr-2" />
-                    ) : (
-                      <X className="w-5 h-5 text-red-500 mr-2" />
-                    )}
-                    {feature.text}
-                  </li>
-                ))}
-              </ul>
+                  <h3 className="text-lg font-semibold mb-4">{plan.list}</h3>
+                  {plan.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-gray-900 text-md leading-snug"
+                    >
+                      <span className="flex-shrink-0 mt-[2px]">
+                        {feature.available ? (
+                          <Check className="w-5 h-5 text-green-500" />
+                        ) : (
+                          <X className="w-5 h-5 text-red-500" />
+                        )}
+                      </span>
+                      <span>{feature.text}</span>
+                    </li>
+                  ))}
+                </ul>
+
             </div>
           </div>
         ))}

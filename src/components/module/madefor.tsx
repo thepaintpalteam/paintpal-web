@@ -1,5 +1,5 @@
 import create from "../../assets/paintpal/svgs/create.svg";
-import art from "../../assets/paintpal/svgs/art.svg";
+import art from "../../assets/paintpal/svgs/educator.svg";
 import remote from "../../assets/paintpal/svgs/remote.svg";
 import distant from "../../assets/paintpal/svgs/distant.svg";
 import neuro from "../../assets/paintpal/svgs/neuro.svg";
@@ -23,7 +23,7 @@ const MadeFor = () => {
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <img src={art} className="w-10" />
+          <img src={art} className="w-14" />
           <div className="text-center space-y-1 mt-2">
             <h1 className="text-lg text-gray-800 font-semibold">Art Educators</h1>
             <p className="italic">Teach & earn globally</p>

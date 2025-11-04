@@ -22,7 +22,7 @@ const plans = [
       { text: "Email art export", available: true },
       { text: "No payment processing (free events only)", available: false },
       { text: "No private event hosting", available: false },
-      { text: "No music synchronization", available: false },
+      { text: "No music synchronisation", available: false },
       { text: "Limited gallery storage", available: false },
     ],
   },

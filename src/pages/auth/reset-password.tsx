@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
 import authServices from "../../services/authServices";
+import toast from "react-hot-toast";
 
 
 const ResetPassword = () => {
@@ -27,6 +28,19 @@ const ResetPassword = () => {
     },
     onError: (err: any) => {
       setError(err?.response?.data?.message || "Invalid OTP. Please try again.");
+    },
+  });
+
+  const mutation = useMutation({
+    mutationFn: authServices.RequestPassword,
+    onSuccess: () => {
+      // navigate to reset page after success
+    
+      toast.success("Email sent successfully")
+      scrollTo(0, 0);
+    },
+    onError: (error: any) => {
+      console.error("Reset failed:", error.response?.data || error.message);
     },
   });
 
@@ -55,6 +69,12 @@ const ResetPassword = () => {
 
     setError("");
     mutate({ email, otp: otpValue });
+  };
+
+  const handleResendOtp= (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    mutation.mutate({ email });
   };
 
   return (
@@ -121,7 +141,7 @@ const ResetPassword = () => {
 
           <div className="cursor-pointer text-center text-md">
             Didn’t receive the email?{" "}
-            <span className="text-[#5FBF92] underline font-medium">
+            <span onClick={handleResendOtp} className="text-[#5FBF92] underline font-medium cursor-pointer">
               Click to resend
             </span>
           </div>

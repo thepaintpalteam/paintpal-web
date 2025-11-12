@@ -48,6 +48,11 @@ const FirebaseLogin = async (payload: { firebaseToken: string }) => {
   return res.data;
 };
 
+const verifyEmail = async (token: string) => {
+  const res = await apiClient.post("/Auth/verify-email", { token });
+  return res.data;
+};
+
 const authServices = {
  Login,
  ChangePassword,
@@ -55,6 +60,7 @@ const authServices = {
  ResetPassword,
  SignUp,
  FirebaseLogin,
+ verifyEmail
 };
 
 export default authServices;

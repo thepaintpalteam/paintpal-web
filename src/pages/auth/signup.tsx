@@ -25,18 +25,22 @@ const SignUp = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState<Record<string, string | null>>({});
+  const [showModal, setShowModal] = useState(false);
 
   const { mutate, status } = useMutation({
     mutationFn: authServices.SignUp,
     onSuccess: (data: any) => {
       toast.success("Account created successfully");
+      setShowModal(true);
       if (data?.token) localStorage.setItem("token", data.token);
       if (data?.user) localStorage.setItem("user", JSON.stringify(data.user));
 
        const token = data?.token;
          if (token) {
         // Redirect to PaintPal native app via deep link
-        window.location.href = `paintpal://login?authToken=${token}`;
+        //window.location.href = `paintpal://login?authToken=${token}`;
+          // Show modal instead of redirect
+        
       } else {
         console.error("No token returned from server");
       }
@@ -428,6 +432,27 @@ const SignUp = () => {
           </div>
         </form>
       </div>
+
+      {showModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-xl p-6 w-full max-w-md text-center">
+              <h2 className="text-2xl font-semibold mb-4">Verify Your Email</h2>
+              <p className="text-gray-600 mb-6">
+                We've sent a verification link to <strong>{form.email}</strong>.
+                Please check your email to verify your account.
+              </p>
+              <button
+                onClick={() => {
+                  setShowModal(false);
+                  
+                }}
+                className="bg-[#5FBF92] px-6 py-2 rounded-lg text-white font-semibold hover:bg-[#4da87a] transition"
+              >
+                Okay, Got it
+              </button>
+            </div>
+          </div>
+        )}
     </div>
   );
 };

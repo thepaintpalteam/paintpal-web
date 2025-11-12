@@ -2,15 +2,33 @@ import { ArrowLeft } from "lucide-react";
 import forgot from "../../assets/paintpal/svgs/reset.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authServices from "../../services/authServices";
+
 
 const ResetPassword = () => {
   const navigate = useNavigate();
-  const [otp, setOtp] = useState(["", "", "", ""]);
+  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
   const location = useLocation();
   const email = (location.state as { email?: string })?.email;
+  const [error, setError] = useState("");
 
-  const token = 2
+  const { mutate, isPending } = useMutation({
+    mutationFn: authServices.validateResetOtp,
+    onSuccess: (data) => {
+      // assuming backend returns { token: "abc123" }
+      const token = data?.resetToken;
+      if (token) {
+        navigate(`/set-password/${token}`, { state: { email } });
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    },
+    onError: (err: any) => {
+      setError(err?.response?.data?.message || "Invalid OTP. Please try again.");
+    },
+  });
 
   const handleChange = (value: string, index: number) => {
     if (/^[0-9]?$/.test(value)) {
@@ -19,17 +37,30 @@ const ResetPassword = () => {
       setOtp(newOtp);
 
       // Auto-focus next input if value entered
-      if (value && index < 3) {
+      if (value && index < otp.length - 1) {
         const nextInput = document.getElementById(`otp-${index + 1}`);
         nextInput?.focus();
       }
     }
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const otpValue = otp.join("");
+    if (!email || otpValue.length < otp.length || otpValue.includes(" ")) {
+      setError("Please enter the 6-digit code we sent to your email.");
+      return;
+    }
+
+    setError("");
+    mutate({ email, otp: otpValue });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-xl rounded-xl shadow-lg">
-       {/* Video Header */}
+        {/* Video Header */}
         <div className="relative w-full h-48">
           <video
             src={authheader}
@@ -37,9 +68,8 @@ const ResetPassword = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover rounded-t-xl "
+            className="w-full h-full object-cover rounded-t-xl"
           />
-          {/* Optional dark overlay */}
         </div>
 
         {/* Header */}
@@ -50,14 +80,12 @@ const ResetPassword = () => {
           </h2>
           <p className="text-gray-600">
             We sent a code to{" "}
-            <span className="text-gray-900 font-medium">
-              {email}
-            </span>
+            <span className="text-gray-900 font-medium">{email}</span>
           </p>
         </div>
 
         {/* Form */}
-        <form className="space-y-6 px-6 pb-6 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-6 px-6 pb-6 mt-4">
           {/* OTP Input */}
           <div className="flex justify-center gap-4">
             {otp.map((digit, index) => (
@@ -68,27 +96,31 @@ const ResetPassword = () => {
                 value={digit}
                 maxLength={1}
                 onChange={(e) => handleChange(e.target.value, index)}
-                className={`w-14 h-14 text-center text-xl font-semibold rounded-lg border outline-none
+                className={`w-10 h-10 text-center text-xl font-semibold rounded-lg border outline-none
                   ${digit ? "border-[#5FBF92]" : "border-gray-400"}
                   focus:border-[#5FBF92]`}
               />
             ))}
           </div>
 
+          {/* Error Message */}
+          {error && (
+            <p className="text-red-500 text-sm text-center">{error}</p>
+          )}
+
           {/* Continue Button */}
           <button
-            onClick={() => {
-              navigate(`/set-password/${token}`);
-              scrollTo(0, 0);
-            }}
             type="submit"
-            className="w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition"
+            disabled={isPending}
+            className={`w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition ${
+              isPending ? "opacity-70 cursor-not-allowed" : ""
+            }`}
           >
-            Continue
+            {isPending ? "Verifying..." : "Continue"}
           </button>
 
           <div className="cursor-pointer text-center text-md">
-            Didn't receive the email?{" "}
+            Didn’t receive the email?{" "}
             <span className="text-[#5FBF92] underline font-medium">
               Click to resend
             </span>
@@ -102,7 +134,7 @@ const ResetPassword = () => {
             className="flex cursor-pointer items-center justify-center gap-3 mt-6"
           >
             <ArrowLeft className="w-6 h-6 text-[#5FBF92]" />
-            <span className="text-md">back to login</span>
+            <span className="text-md">Back to login</span>
           </div>
         </form>
 
@@ -110,7 +142,7 @@ const ResetPassword = () => {
         <div className="flex justify-center items-center gap-2 px-6 pb-6 mt-14">
           <div className="h-2 flex-1 bg-[#5FBF92] rounded"></div>
           <div className="h-2 flex-1 bg-[#5FBF92] rounded"></div>
-          <div className="h-2 flex-1 bg-gray-300 rounded"></div>
+          <div className="h-2 flex-1 bg-[#5FBF92] rounded"></div>
           <div className="h-2 flex-1 bg-gray-300 rounded"></div>
         </div>
       </div>

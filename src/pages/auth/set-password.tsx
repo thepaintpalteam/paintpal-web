@@ -1,6 +1,6 @@
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import forgot from "../../assets/paintpal/svgs/set.svg";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useState } from "react";
 import authheader from "../../assets/paintpal/images/authheader.mp4";
 import authServices from "../../services/authServices";
@@ -10,6 +10,8 @@ import toast from "react-hot-toast";
 const SetPassword = () => {
   const navigate = useNavigate();
   const { token } = useParams();
+  const location = useLocation();
+  const email = (location.state as { email?: string })?.email;
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -41,8 +43,16 @@ const SetPassword = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!token || !password) return toast.error("Enter password")
-    mutation.mutate({ token, newPassword: password });
+    if (!token || !password) {
+      return toast.error("Enter password");
+    }
+    if (!email) {
+      return toast.error("Email is required");
+    }
+    if (password !== confirmPassword) {
+      return toast.error("Passwords do not match");
+    }
+    mutation.mutate({ resetToken: token, email, newPassword: password });
   };
 
   return (
@@ -71,7 +81,7 @@ const SetPassword = () => {
         </div>
 
         {/* Form */}
-        <form className="space-y-6 px-6 pb-6 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-6 px-6 pb-6 mt-4">
           {/* Password Input */}
           <div className="relative">
             <input
@@ -125,7 +135,6 @@ const SetPassword = () => {
           {/* Submit Button */}
           <button
             type="submit"
-             onClick={handleSubmit}
             disabled={mutation.isPending}
             className="w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition"
           >

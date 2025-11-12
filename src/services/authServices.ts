@@ -53,6 +53,11 @@ const verifyEmail = async (token: string) => {
   return res.data;
 };
 
+const validateResetOtp = async (payload: { email: string; otp: string }) => {
+  const res = await apiClient.post("/Auth/validate-reset-otp", payload);
+  return res.data;
+};
+
 const authServices = {
  Login,
  ChangePassword,
@@ -60,7 +65,8 @@ const authServices = {
  ResetPassword,
  SignUp,
  FirebaseLogin,
- verifyEmail
+ verifyEmail,
+ validateResetOtp
 };
 
 export default authServices;

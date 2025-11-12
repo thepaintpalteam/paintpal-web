@@ -171,6 +171,7 @@ const router = createBrowserRouter([
         title="Join as Guest"
         description="Join a PaintPal live event session as a guest and collaborate with artists in real time."
         path="/joinasguest"
+        
         noindex
       >
         <AuthPageLayout>

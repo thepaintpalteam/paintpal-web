@@ -23,7 +23,7 @@ const BASE_URL = normaliseBaseUrl(
   import.meta.env.VITE_SITE_URL ?? "https://paintpal.app"
 );
 
-const DEFAULT_IMAGE = `${BASE_URL}/logo.svg`;
+const DEFAULT_IMAGE = `${BASE_URL}/logo.png`;
 
 const Seo = ({
   title,

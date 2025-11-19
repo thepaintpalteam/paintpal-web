@@ -1,5 +1,5 @@
 import header from "../../assets/paintpal/images/simple.png";
-import logo from "../../assets/paintpal/images/logo2.png";
+import logo from "../../assets/hue.png";
 
 const Simple = () => {
   return (

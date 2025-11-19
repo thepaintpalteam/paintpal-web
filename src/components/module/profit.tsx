@@ -1,4 +1,4 @@
-import profit from "../../assets/paintpal/images/profit.png";
+import profit from "../../assets/profit.png";
 
 const Profit = () => {
   return (

@@ -1,7 +1,7 @@
 import profit from "../../assets/paintpal/images/Earn.gif";
 import invite from "../../assets/invite.png";
-import music from "../../assets/paintpal/images/music.png";
-import save from "../../assets/paintpal/images/Save.gif"
+import music from "../../assets/meet.png";
+import save from "../../assets/save.gif"
 
 const Earn = () => {
   return (

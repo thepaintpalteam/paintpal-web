@@ -4,7 +4,7 @@ import crown from "../../../assets/paintpal/svgs/crown.svg";
 
 const plans = [
   {
-    name: "PaintPal Free",
+    name: "Huecrib Free",
     description:
       "Design anything and bring your ideas to life. No cost, just creativity",
     price: "GBP£0",
@@ -27,7 +27,7 @@ const plans = [
     ],
   },
   {
-    name: "PaintPal Pro",
+    name: "Huecrib Pro",
     description:
       "Host as many painting events as you want, get paid for your sessions, and join any event that catches your eye.",
     price: "GBP£9.99",
@@ -51,7 +51,7 @@ const plans = [
     ],
   },
   {
-    name: "PaintPal Advance",
+    name: "Huecrib Advance",
       description: "Ideal for businesses seeking creative team bonding activities that inspire collaboration and boost morale.",
     price: "GBP£49.99",
     priceDesc: "/month per business",

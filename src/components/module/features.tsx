@@ -34,7 +34,7 @@ const Features = () => {
           <div className="flex items-center gap-2">
             <img src={creative} />
             <h1 className="text-md text-gray-800 ">
-              Get creative, paint on PaintPal
+              Get creative, paint on Huecrib
             </h1>
           </div>
           <div className="flex items-center gap-2">
@@ -61,7 +61,7 @@ const Features = () => {
           <div className="flex items-center gap-2">
             <img src={recieve} />
             <h1 className="text-md text-gray-800  ">
-              Recieve your art in your email as a guest attendee on PaintPal
+              Recieve your art in your email as a guest attendee on Huecrib
             </h1>
           </div>
         </div>

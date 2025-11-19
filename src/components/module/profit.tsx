@@ -7,7 +7,7 @@ const Profit = () => {
         {/* Text Section */}
         <div className="flex flex-col gap-6 lg:w-[800px] text-center lg:text-left">
           <h1 className="text-xl lg:text-3xl font-semibold text-gray-900">
-            PaintPal for Nonprofits
+            Huecrib for Nonprofits
           </h1>
           <p className="text-md lg:text-md text-gray-700 lg:leading-10">
             As a nonprofit supporting neurodivergent communities, you understand the transformative power of creative expression and inclusive social experiences. Eligible nonprofit organisations dedicated to neurodivergent support get their own discounted version of PaintPal, specially designed for hosting therapeutic art sessions that build community, confidence, and connection.
@@ -24,7 +24,7 @@ const Profit = () => {
             }
             className="bg-[#5FBF92] py-3 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition"
           >
-            Apply for PaintPal Nonprofits
+            Apply for Huecrib Nonprofits
           </button>
 
             <button

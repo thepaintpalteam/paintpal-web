@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import logo from "../../../assets/paintpal/images/logo2.png";
+import logo from "../../../assets/huecrib.png";
 
 import insta from "../../../assets/paintpal/svgs/insta.svg";
 import link from "../../../assets/paintpal/svgs/link.svg";
@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between m-6 lg:my-6 gap-6  ">
             <div>
-              <img src={logo} className="w-28" />
+              <img src={logo} className="w-36" />
               <p className="lg:w-[300px] mt-4 text-md text-gray-900">
                 Bringing people together through the joy of painting. Create,
                 connect, and celebrate art in a whole new way with virtual pain

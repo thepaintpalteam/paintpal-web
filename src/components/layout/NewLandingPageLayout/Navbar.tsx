@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../../../assets/paintpal/images/logo.png";
+import logo from "../../../assets/huecrib.png";
 import { NavLink } from "react-router-dom";
 
 import { AiOutlineMenu } from "react-icons/ai";
@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="max-w-[1440px] flex items-center justify-between py-2 text-sm mx-3 ">
         <div className="flex items-center gap-10">
           <NavLink to="/">
-            <img src={logo} className="w-28" alt="Logo" />
+            <img src={logo} className="w-36" alt="Logo" />
           </NavLink>
         </div>
 

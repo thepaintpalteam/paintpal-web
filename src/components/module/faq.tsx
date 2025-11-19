@@ -16,14 +16,14 @@ const FAQs = () => {
 
   const questions: FAQItem[] = [
     {
-      title: "What exactly is PaintPal?",
+      title: "What exactly is Huecrib?",
       content:
-        "PaintPal is a virtual space for digital painting and creative events. It’s a single platform where you can paint by yourself, host or join live art events with others, and even earn money by running your own ticketed workshops.",
+        "Huecrib is a virtual space for digital painting and creative events. It’s a single platform where you can paint by yourself, host or join live art events with others, and even earn money by running your own ticketed workshops.",
     },
     {
-      title: "Who is PaintPal for?",
+      title: "Who is Huecrib for?",
       content: {
-        text: "PaintPal is designed for a wide range of creative people, including:",
+        text: "Huecrib is designed for a wide range of creative people, including:",
         list: [
           "Neurodivergent creators who want a calm, flexible space to paint solo or socialise at their own pace.",
           "Hobbyist artists looking for a fun, low-pressure way to unwind and express themselves.",
@@ -34,7 +34,7 @@ const FAQs = () => {
       },
     },
     {
-      title: "Can I use PaintPal for free?",
+      title: "Can I use Huecrib for free?",
       content: {
         text: "Yes, absolutely! Our Free Plan is available to everyone and includes access to basic solo painting features. You can also host up to three of your own events and join two events each month, completely free.\nIf you're looking for more advanced capabilities, you can upgrade:",
 
@@ -45,30 +45,30 @@ const FAQs = () => {
       },
     },
     {
-      title: "How do I make money on PaintPal?",
+      title: "How do I make money on Huecrib?",
       content:
-        "With our Individual Plan, you can host paid, ticketed events and monetise your creative skills. You set the ticket price, and we handle the platform. PaintPal takes a 25% commission on each transaction from paid events you host.",
+        "With our Individual Plan, you can host paid, ticketed events and monetise your creative skills. You set the ticket price, and we handle the platform. Huecrib takes a 25% commission on each transaction from paid events you host.",
     },
     {
       title:
-        "How is PaintPal different from other art apps or event platforms?",
+        "How is Huecrib different from other art apps or event platforms?",
       content:
-        "With our Individual Plan, you can host paid, ticketed events and monetise your creative skills. You set the ticket price, and we handle the platform. PaintPal takes a 25% commission on each transaction from paid events you host.",
+        "With our Individual Plan, you can host paid, ticketed events and monetise your creative skills. You set the ticket price, and we handle the platform. Huecrib takes a 25% commission on each transaction from paid events you host.",
     },
     {
       title:
-        "How is PaintPal different from other art apps or event platforms?",
+        "How is Huecrib different from other art apps or event platforms?",
       content:
-        "Our key advantage is our hybrid model. While other platforms focus on either digital painting or virtual events, PaintPal is the first to combine digital painting tools, event hosting, and creator monetisation features into one seamless experience.",
+        "Our key advantage is our hybrid model. While other platforms focus on either digital painting or virtual events, Huecrib is the first to combine digital painting tools, event hosting, and creator monetisation features into one seamless experience.",
     },
 
      {
-      title: "What devices can I use PaintPal on?",
+      title: "What devices can I use Huecrib on?",
       content: {
-       text: "PaintPal is designed to be accessible across your favourite devices, with features tailored to each experience:",
+       text: "Huecrib is designed to be accessible across your favourite devices, with features tailored to each experience:",
 
         list: [
-          "On Tablets (e.g., iPad, Android/Samsung tablets): You get the full PaintPal experience. You can use our digital canvas for solo painting, host your own creative events, and join sessions to paint collaboratively in real-time.",
+          "On Tablets (e.g., iPad, Android/Samsung tablets): You get the full Huecrib experience. You can use our digital canvas for solo painting, host your own creative events, and join sessions to paint collaboratively in real-time.",
           "On Mobile Phones: You can use your phone as a social and management tool. It's perfect for creating and managing your events, browsing for sessions to join, and participating in the social aspects of an event, even when you're on the go. Please note, the painting feature itself is only available on tablets."
         ],
       },

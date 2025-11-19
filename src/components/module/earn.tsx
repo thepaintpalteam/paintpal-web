@@ -1,5 +1,5 @@
 import profit from "../../assets/paintpal/images/Earn.gif";
-import invite from "../../assets/paintpal/images/invite.png";
+import invite from "../../assets/invite.png";
 import music from "../../assets/paintpal/images/music.png";
 import save from "../../assets/paintpal/images/Save.gif"
 

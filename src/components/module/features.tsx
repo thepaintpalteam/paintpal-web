@@ -79,7 +79,7 @@ const Features = () => {
       <div className="flex items-center justify-center mt-16">
         <button
            onClick={() =>
-                  window.open("https://paintpal.framer.website/", "_blank")
+                  window.open("https://huecrib.framer.website/ ", "_blank")
                 }
           className="bg-[#5FBF92]   py-2.5 px-3  font-medium text-lg rounded-lg hover:bg-[#4AA97D] transition"
         >

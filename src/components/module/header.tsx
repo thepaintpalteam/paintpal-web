@@ -24,7 +24,7 @@ const Header = () => {
             </button> */}
             <button 
              onClick={() =>
-                  window.open("https://paintpal.framer.website/", "_blank")
+                  window.open("https://huecrib.framer.website/ ", "_blank")
                 }
             className="bg-white border border-gray-200 w-44  py-3 font-medium px-4 text-md  rounded-lg ">
               Get in touch

@@ -60,7 +60,7 @@ const Navbar = () => {
               </button> */}
               <button
                 onClick={() =>
-                  window.open("https://paintpal.framer.website/", "_blank")
+                  window.open("https://huecrib.framer.website/ ", "_blank")
                 }
                 className="bg-[#5FBF92] py-3 hidden md:block font-medium px-4 text-md rounded-lg hover:bg-[#4BAE82] transition-colors duration-200"
               >

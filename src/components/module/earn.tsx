@@ -35,7 +35,7 @@ const Earn = () => {
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
               <button
                onClick={() =>
-                  window.open("https://paintpal.framer.website/", "_blank")
+                  window.open("https://huecrib.framer.website/ ", "_blank")
                 }
                className="bg-[#5FBF92] py-2 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
                 Watch our video
@@ -115,7 +115,7 @@ const Earn = () => {
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
               <button
                onClick={() =>
-                  window.open("https://paintpal.framer.website/", "_blank")
+                  window.open("https://huecrib.framer.website/ ", "_blank")
                 }
                className="bg-[#5FBF92] py-2 px-6 font-medium text-md rounded-lg hover:bg-[#4AA97D] transition">
                 Watch our video

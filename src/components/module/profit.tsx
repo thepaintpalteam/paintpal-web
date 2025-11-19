@@ -29,7 +29,7 @@ const Profit = () => {
 
             <button
              onClick={() =>
-                  window.open("https://paintpal.framer.website/", "_blank")
+                  window.open("https://huecrib.framer.website/ ", "_blank")
                 }
              className="bg-white border border-gray-300 px-6 py-3 font-medium text-md rounded-lg hover:bg-gray-50 transition">
               Check for eligibility

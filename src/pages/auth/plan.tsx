@@ -1,22 +1,22 @@
 import { useState, useMemo } from "react";
 import { Check, Star, Lock, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authheader from "../../assets/auth.gif";
 import { useGetSubscriptions } from "../../hooks/useQueries";
 
 const Plan = () => {
   const [selected, setSelected] = useState<string>(() => {
-  const saved = localStorage.getItem("selectedPlan");
-  if (saved) {
-    try {
-      const plan = JSON.parse(saved);
-      return plan.name.toLowerCase(); // Use name for preselection
-    } catch (e) {
-      return "monthly"; // fallback if parsing fails
+    const saved = localStorage.getItem("selectedPlan");
+    if (saved) {
+      try {
+        const plan = JSON.parse(saved);
+        return plan.name.toLowerCase(); // Use name for preselection
+      } catch (e) {
+        return "monthly"; // fallback if parsing fails
+      }
     }
-  }
-  return "monthly"; // default if nothing stored
-});
+    return "monthly"; // default if nothing stored
+  });
   const navigate = useNavigate();
   const { data: subData, status } = useGetSubscriptions();
 
@@ -48,8 +48,8 @@ const Plan = () => {
         badge: isMonthly
           ? { text: "Recommended", bg: "bg-[#5FBF92]", textColor: "text-black" }
           : isYearly
-          ? { text: "Save 20%", bg: "bg-gray-200", textColor: "text-black" }
-          : null,
+            ? { text: "Save 20%", bg: "bg-gray-200", textColor: "text-black" }
+            : null,
       };
     });
   }, [subData]);
@@ -67,20 +67,20 @@ const Plan = () => {
 
 
     navigate("/payment", {
-    state: {
-      planId: selectedPlan.plan,
-      price: selectedPlan.price,
-      currency: selectedPlan.currency,
-    },
-   });
+      state: {
+        planId: selectedPlan.plan,
+        price: selectedPlan.price,
+        currency: selectedPlan.currency,
+      },
+    });
 
-   scrollTo(0, 0);
+    scrollTo(0, 0);
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
-      <div className="bg-white w-full max-w-xl rounded-xl shadow-lg">
-        <div className="relative w-full h-48">
+      <div className="bg-white w-full max-w-xl rounded-3xl shadow-lg">
+        {/* <div className="relative w-full h-48">
           <video
             src={authheader}
             autoPlay
@@ -89,6 +89,12 @@ const Plan = () => {
             playsInline
             className="w-full h-full object-cover rounded-t-xl "
           />
+        </div> */}
+
+        <div>
+
+          <img src={authheader} alt="Auth Logo" className="rounded-t-3xl" />
+
         </div>
 
         <div className="mt-3 px-6 py-3">
@@ -164,11 +170,10 @@ const Plan = () => {
                     <div className="mt-6 flex">
                       <div
                         className={`w-6 h-6 border-2 rounded-full flex items-center justify-center 
-                      ${
-                        selected === plan.id
-                          ? "border-[#5FBF92]"
-                          : "border-gray-400"
-                      }`}
+                      ${selected === plan.id
+                            ? "border-[#5FBF92]"
+                            : "border-gray-400"
+                          }`}
                       >
                         {selected === plan.id && (
                           <div className="w-3 h-3 rounded-full bg-[#5FBF92]" />
@@ -188,11 +193,9 @@ const Plan = () => {
             className="w-full bg-[#5FBF92] py-3 rounded-lg mt-6 transition disabled:opacity-50"
           >
             {selected
-              ? `Checkout ${
-                  plans.find((p: any) => p.id === selected)?.price.currency
-                }${plans.find((p: any) => p.id === selected)?.price.amount}${
-                  plans.find((p: any) => p.id === selected)?.price.unit
-                }`
+              ? `Checkout ${plans.find((p: any) => p.id === selected)?.price.currency
+              }${plans.find((p: any) => p.id === selected)?.price.amount}${plans.find((p: any) => p.id === selected)?.price.unit
+              }`
               : "Select a plan"}
           </button>
 

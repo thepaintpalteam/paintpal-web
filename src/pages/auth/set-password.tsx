@@ -2,7 +2,7 @@ import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import forgot from "../../assets/paintpal/svgs/set.svg";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useState } from "react";
-import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authheader from "../../assets/auth.gif";
 import authServices from "../../services/authServices";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
@@ -59,7 +59,7 @@ const SetPassword = () => {
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-xl rounded-xl shadow-lg">
         {/* Video Header */}
-        <div className="relative w-full h-48">
+        {/* <div className="relative w-full h-48">
           <video
             src={authheader}
             autoPlay
@@ -68,7 +68,13 @@ const SetPassword = () => {
             playsInline
             className="w-full h-full object-cover rounded-t-xl "
           />
-          {/* Optional dark overlay */}
+        
+        </div> */}
+
+        <div>
+
+          <img src={authheader} alt="Auth Logo" className="rounded-t-3xl" />
+
         </div>
 
         {/* Header */}
@@ -106,9 +112,8 @@ const SetPassword = () => {
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className={`h-2 flex-1 rounded ${
-                  i <= strength ? "bg-[#5FBF92]" : "bg-gray-300"
-                }`}
+                className={`h-2 flex-1 rounded ${i <= strength ? "bg-[#5FBF92]" : "bg-gray-300"
+                  }`}
               ></div>
             ))}
           </div>

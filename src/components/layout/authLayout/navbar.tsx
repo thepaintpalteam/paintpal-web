@@ -1,4 +1,4 @@
-import logo from "../../../assets/paintpal/images/authlogo.png";
+import logo from "../../../assets/huecrib.png";
 import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -14,7 +14,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-10">
           <NavLink to="/">
-            <img src={logo} className="w-28" alt="Logo" />
+            <img src={logo} className="w-36" alt="Logo" />
           </NavLink>
         </div>
 

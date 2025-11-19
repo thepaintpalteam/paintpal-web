@@ -3,7 +3,7 @@ import forgot from "../../assets/paintpal/svgs/reset.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authheader from "../../assets/auth.gif";
 import authServices from "../../services/authServices";
 import toast from "react-hot-toast";
 
@@ -35,7 +35,7 @@ const ResetPassword = () => {
     mutationFn: authServices.RequestPassword,
     onSuccess: () => {
       // navigate to reset page after success
-    
+
       toast.success("Email sent successfully")
       scrollTo(0, 0);
     },
@@ -71,7 +71,7 @@ const ResetPassword = () => {
     mutate({ email, otp: otpValue });
   };
 
-  const handleResendOtp= (e: React.FormEvent) => {
+  const handleResendOtp = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     mutation.mutate({ email });
@@ -81,7 +81,7 @@ const ResetPassword = () => {
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-xl rounded-xl shadow-lg">
         {/* Video Header */}
-        <div className="relative w-full h-48">
+        {/* <div className="relative w-full h-48">
           <video
             src={authheader}
             autoPlay
@@ -90,6 +90,12 @@ const ResetPassword = () => {
             playsInline
             className="w-full h-full object-cover rounded-t-xl"
           />
+        </div> */}
+
+        <div>
+
+          <img src={authheader} alt="Auth Logo" className="rounded-t-3xl" />
+
         </div>
 
         {/* Header */}
@@ -132,9 +138,8 @@ const ResetPassword = () => {
           <button
             type="submit"
             disabled={isPending}
-            className={`w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition ${
-              isPending ? "opacity-70 cursor-not-allowed" : ""
-            }`}
+            className={`w-full bg-[#5FBF92] py-3 rounded-lg font-semibold transition ${isPending ? "opacity-70 cursor-not-allowed" : ""
+              }`}
           >
             {isPending ? "Verifying..." : "Continue"}
           </button>

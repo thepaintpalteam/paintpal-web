@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import forgot from "../../assets/paintpal/svgs/forgot.svg";
 import { useNavigate } from "react-router-dom";
-import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authheader from "../../assets/auth.gif";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import authServices from "../../services/authServices";
@@ -18,7 +18,7 @@ const ForgotPassword = () => {
     mutationFn: authServices.RequestPassword,
     onSuccess: () => {
       // navigate to reset page after success
-     navigate("/reset-password", { state: { email } });
+      navigate("/reset-password", { state: { email } });
       toast.success("Email sent successfully")
       scrollTo(0, 0);
     },
@@ -35,9 +35,9 @@ const ForgotPassword = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
-      <div className="bg-white w-full max-w-xl rounded-xl shadow-lg">
+      <div className="bg-white w-full max-w-xl rounded-3xl shadow-lg">
         {/* Header video */}
-        <div className="relative w-full h-48">
+        {/* <div className="relative w-full h-48">
           <video
             src={authheader}
             autoPlay
@@ -46,6 +46,12 @@ const ForgotPassword = () => {
             playsInline
             className="w-full h-full object-cover rounded-t-xl"
           />
+        </div> */}
+
+        <div>
+
+          <img src={authheader} alt="Auth Logo" className="rounded-t-3xl" />
+
         </div>
 
         {/* Header */}

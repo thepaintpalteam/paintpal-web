@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authheader from "../../assets/auth.gif";
 import authServices from "../../services/authServices";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
@@ -70,9 +70,9 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
-      <div className="bg-white w-full max-w-2xl   rounded-xl shadow-lg">
+      <div className="bg-white w-full max-w-2xl   rounded-3xl shadow-lg">
         {/* Video Header */}
-        <div className="relative w-full h-48">
+        {/* <div className="relative w-full h-48">
           <video
             src={authheader}
             autoPlay
@@ -81,15 +81,15 @@ const Login = () => {
             playsInline
             className="w-full h-full object-cover rounded-t-xl "
           />
-          {/* Optional dark overlay */}
-        </div>
+        
+        </div> */}
 
         {/* Logo */}
-        {/* <div>
-          <div className="bg-gradient-to-b from-[#FEAF1E] via-[#FEAF1E] to-[#FEAF1E] p-10 rounded-t-xl shadow-md flex items-center justify-center">
-            <img src={authlogo} alt="Auth Logo" className="w-36" />
-          </div>
-        </div> */}
+        <div>
+         
+            <img src={authheader} alt="Auth Logo" className="rounded-t-3xl" />
+         
+        </div>
 
         {/* Header */}
         <div className=" mt-3 px-6 py-4 ">

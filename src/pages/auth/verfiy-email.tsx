@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
-import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authheader from "../../assets/auth.gif";
 import toast from "react-hot-toast";
 import authServices from "../../services/authServices";
 
@@ -35,7 +35,7 @@ const VerifyEmail = () => {
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
       <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg">
         {/* Video Header */}
-        <div className="relative w-full h-48">
+        {/* <div className="relative w-full h-48">
           <video
             src={authheader}
             autoPlay
@@ -44,7 +44,14 @@ const VerifyEmail = () => {
             playsInline
             className="w-full h-full object-cover rounded-t-xl"
           />
+        </div> */}
+
+        <div>
+          <img src={authheader} alt="Auth Logo" className="rounded-t-3xl" />
+
         </div>
+
+        
 
         {/* Header */}
         <div className="mt-3 px-6 py-4">

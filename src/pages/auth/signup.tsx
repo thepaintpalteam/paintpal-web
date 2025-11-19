@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { Eye, EyeOff, Calendar } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 
-import authheader from "../../assets/paintpal/images/authheader.mp4";
+import authheader from "../../assets/auth.gif";
 import authServices from "../../services/authServices";
 import toast from "react-hot-toast";
 
@@ -35,16 +35,16 @@ const SignUp = () => {
       if (data?.token) localStorage.setItem("token", data.token);
       if (data?.user) localStorage.setItem("user", JSON.stringify(data.user));
 
-       const token = data?.token;
-         if (token) {
+      const token = data?.token;
+      if (token) {
         // Redirect to PaintPal native app via deep link
         //window.location.href = `paintpal://login?authToken=${token}`;
-          // Show modal instead of redirect
-        
+        // Show modal instead of redirect
+
       } else {
         console.error("No token returned from server");
       }
-      
+
 
     },
     onError: (err: any) => {
@@ -166,8 +166,8 @@ const SignUp = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center py-24 mx-4">
-      <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg">
-        <div className="relative w-full h-48">
+      <div className="bg-white w-full max-w-2xl rounded-3xl shadow-lg">
+        {/* <div className="relative w-full h-48">
           <video
             src={authheader}
             autoPlay
@@ -176,7 +176,13 @@ const SignUp = () => {
             playsInline
             className="w-full h-full object-cover rounded-t-xl "
           />
+        </div> */}
+
+        <div>
+          <img src={authheader} alt="Auth Logo" className="rounded-t-3xl" />
+
         </div>
+
 
         <div className="mt-3 px-6 py-3">
           <h2 className="text-xl font-semibold text-gray-800">
@@ -403,14 +409,12 @@ const SignUp = () => {
             <button
               type="button"
               onClick={() => setAgree(!agree)}
-              className={`w-12 h-6 flex items-center rounded-full p-1 transition ${
-                agree ? "bg-[#5FBF92]" : "bg-gray-300"
-              }`}
+              className={`w-12 h-6 flex items-center rounded-full p-1 transition ${agree ? "bg-[#5FBF92]" : "bg-gray-300"
+                }`}
             >
               <div
-                className={`bg-white w-5 h-5 rounded-full shadow-md transform transition ${
-                  agree ? "translate-x-3" : ""
-                }`}
+                className={`bg-white w-5 h-5 rounded-full shadow-md transform transition ${agree ? "translate-x-3" : ""
+                  }`}
               />
             </button>
             <p className="text-md text-gray-700">
@@ -434,25 +438,25 @@ const SignUp = () => {
       </div>
 
       {showModal && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-xl p-6 w-full max-w-md text-center">
-              <h2 className="text-2xl font-semibold mb-4">Verify Your Email</h2>
-              <p className="text-gray-600 mb-6">
-                We've sent a verification link to <strong>{form.email}</strong>.
-                Please check your email to verify your account.
-              </p>
-              <button
-                onClick={() => {
-                  setShowModal(false);
-                  
-                }}
-                className="bg-[#5FBF92] px-6 py-2 rounded-lg text-white font-semibold hover:bg-[#4da87a] transition"
-              >
-                Okay, Got it
-              </button>
-            </div>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl p-6 w-full max-w-md text-center">
+            <h2 className="text-2xl font-semibold mb-4">Verify Your Email</h2>
+            <p className="text-gray-600 mb-6">
+              We've sent a verification link to <strong>{form.email}</strong>.
+              Please check your email to verify your account.
+            </p>
+            <button
+              onClick={() => {
+                setShowModal(false);
+
+              }}
+              className="bg-[#5FBF92] px-6 py-2 rounded-lg text-white font-semibold hover:bg-[#4da87a] transition"
+            >
+              Okay, Got it
+            </button>
           </div>
-        )}
+        </div>
+      )}
     </div>
   );
 };

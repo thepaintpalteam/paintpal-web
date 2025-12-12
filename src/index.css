@@ -5,6 +5,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force light mode - override any dark mode preferences */
+html {
+  color-scheme: light !important;
+  background-color: #ffffff !important;
+}
+
+body {
+  color-scheme: light !important;
+  background-color: #ffffff !important;
+}
+
+/* Override any dark mode media queries */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: light !important;
+    background-color: #ffffff !important;
+  }
+  
+  body {
+    color-scheme: light !important;
+    background-color: #ffffff !important;
+  }
+}
+
 
 
 *{

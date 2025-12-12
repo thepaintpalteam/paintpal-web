@@ -4,6 +4,7 @@ import logo from "../../../assets/huecrib.png";
 import insta from "../../../assets/paintpal/svgs/insta.svg";
 import link from "../../../assets/paintpal/svgs/link.svg";
 import x from "../../../assets/paintpal/svgs/x.svg";
+import { FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -115,9 +116,9 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <div className="flex items-center gap-8">
+                <div className="flex items-center gap-6">
                   <a
-                    href="https://www.instagram.com/paintpal.io?igsh=eGd3NTM3NHlkbDJr&utm_source=qr"
+                    href="https://www.instagram.com/huecrib?igsh=eGd3NTM3NHlkbDJr&utm_source=qr"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -129,7 +130,7 @@ const Footer = () => {
                   </a>
 
                   <a
-                    href="https://www.linkedin.com/company/paintpal-io/"
+                    href="https://www.linkedin.com/company/huecrib/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -141,7 +142,7 @@ const Footer = () => {
                   </a>
 
                   <a
-                    href="https://x.com/paintpal_io?s=21&t=af7FNzXuFcebWItsPY5dkw"
+                    href="https://x.com/huecrib?s=21&t=af7FNzXuFcebWItsPY5dkw"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -150,6 +151,14 @@ const Footer = () => {
                       alt="X (Twitter)"
                       className="w-6 h-6 hover:opacity-80 transition-opacity"
                     />
+                  </a>
+
+                  <a
+                    href="https://www.facebook.com/share/1bDnp1KjPG/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaFacebook className="w-5 h-5 hover:opacity-80 transition-opacity"  />
                   </a>
                 </div>
               </div>

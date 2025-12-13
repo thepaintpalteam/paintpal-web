@@ -1,4 +1,13 @@
-loy:
+
+name: Deploy TypeScript Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -8,7 +17,7 @@ loy:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 18
           cache: npm
 
       - name: Install dependencies
@@ -29,4 +38,4 @@ loy:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
-          server-dir: /
+          server-dir: /

@@ -1,18 +1,8 @@
-  User-agent: *
-  Allow: /
-
-  Sitemap: https://huecrib.com/sitemap.xml
-  ```
-- `public/sitemap.xml`
-  ```
-  <?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-      <loc>https://huecrib.com/</loc>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-    </url>
-  </urlset>
-  ```
-
-Redeploy after updating them. If you later switch domains again, you’ll need to adjust these files (or generate them dynamically) so they stay in sync with the live URL.
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://huecrib.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

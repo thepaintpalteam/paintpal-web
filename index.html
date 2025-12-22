@@ -12,15 +12,24 @@
     <title>Huecrib: Your Social Digital Painting Space</title>
 
     <meta
-    name="description"
-    content="Huecrib is a social digital painting space where artists paint, connect, collaborate, and share creativity from anywhere."
-  />
-  
+      name="description"
+      content="Huecrib is a social digital painting space where artists paint, connect, collaborate, and share creativity from anywhere."
+    />
 
     <meta
       name="keywords"
-      content="Huecrib, live event painting, artist booking software, paint with friends online, virtual painting events, collaborative online art"
+      content="
+      Huecrib, live event painting, artist booking software, paint with friends online, virtual painting events, collaborative online art"
     />
+    <meta
+      property="og:title"
+      content="Huecrib: Your Social Digital Painting Space"
+    />
+    <meta
+      property="og:description"
+      content="A social digital painting space for artists to create, connect, and collaborate."
+    />
+
     <meta name="theme-color" content="#5FBF92" />
     <meta property="og:locale" content="en_US" />
     <meta name="robots" content="index,follow" />
@@ -29,7 +38,6 @@
       rel="stylesheet"
     />
     <link rel="canonical" href="https://huecrib.com/" />
-
 
     <meta name="color-scheme" content="light" />
 
@@ -108,49 +116,49 @@
     <script type="module" src="/src/main.tsx"></script>
     <script>
       // Force light mode - prevent dark mode from being applied
-      (function() {
+      (function () {
         // Set color-scheme immediately
         if (document.documentElement) {
-          document.documentElement.style.colorScheme = 'light';
-          document.documentElement.style.backgroundColor = '#ffffff';
+          document.documentElement.style.colorScheme = "light";
+          document.documentElement.style.backgroundColor = "#ffffff";
         }
-        
+
         // Override any system preferences
-        const meta = document.createElement('meta');
-        meta.name = 'color-scheme';
-        meta.content = 'light';
+        const meta = document.createElement("meta");
+        meta.name = "color-scheme";
+        meta.content = "light";
         document.head.appendChild(meta);
-        
+
         // Watch for any changes and force light mode
-        const observer = new MutationObserver(function(mutations) {
+        const observer = new MutationObserver(function (mutations) {
           if (document.documentElement) {
-            document.documentElement.style.colorScheme = 'light';
-            document.documentElement.style.backgroundColor = '#ffffff';
+            document.documentElement.style.colorScheme = "light";
+            document.documentElement.style.backgroundColor = "#ffffff";
           }
           if (document.body) {
-            document.body.style.colorScheme = 'light';
-            document.body.style.backgroundColor = '#ffffff';
+            document.body.style.colorScheme = "light";
+            document.body.style.backgroundColor = "#ffffff";
           }
         });
-        
+
         observer.observe(document.documentElement, {
           attributes: true,
-          attributeFilter: ['style', 'class']
+          attributeFilter: ["style", "class"],
         });
       })();
-      
+
       // Wait for the DOM to load
       document.addEventListener("DOMContentLoaded", () => {
         // Ensure light mode is set
         if (document.documentElement) {
-          document.documentElement.style.colorScheme = 'light';
-          document.documentElement.style.backgroundColor = '#ffffff';
+          document.documentElement.style.colorScheme = "light";
+          document.documentElement.style.backgroundColor = "#ffffff";
         }
         if (document.body) {
-          document.body.style.colorScheme = 'light';
-          document.body.style.backgroundColor = '#ffffff';
+          document.body.style.colorScheme = "light";
+          document.body.style.backgroundColor = "#ffffff";
         }
-        
+
         // Set a timeout (e.g., 3 seconds)
         setTimeout(() => {
           const spinner = document.getElementById("spinner");

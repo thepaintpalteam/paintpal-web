@@ -16,7 +16,7 @@ const Simple = () => {
       <div className="flex items-center justify-center mt-8 relative">
         <img
           src={header}
-          alt="PaintPal header"
+          alt="Huecrib header"
           className="w-full lg:w-[1200px] h-[500px] lg:h-full rounded-lg object-cover"
         />
 

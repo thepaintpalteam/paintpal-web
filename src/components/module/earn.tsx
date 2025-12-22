@@ -47,7 +47,7 @@ const Earn = () => {
           <div className="flex justify-center lg:justify-end w-full lg:w-1/2">
             <img
               src={profit}
-              alt="PaintPal for Nonprofits"
+              alt="Huecrib for Nonprofits"
               className="max-w-[280px] lg:max-w-[350px] w-full h-auto rounded-lg"
             />
           </div>
@@ -71,7 +71,7 @@ const Earn = () => {
           <div className="flex justify-center lg:justify-end flex-1">
             <img
               src={save}
-              alt="PaintPal for Nonprofits"
+              alt="Huecrib for Nonprofits"
               className="max-w-[260px] lg:max-w-[350px] w-full h-auto rounded-lg"
             />
           </div>
@@ -93,7 +93,7 @@ const Earn = () => {
           <div className="flex justify-center lg:justify-end flex-1">
             <img
               src={music}
-              alt="PaintPal for Nonprofits"
+              alt="Huecrib for Nonprofits"
               className="max-w-[260px] lg:max-w-[350px] w-full h-auto rounded-lg"
             />
           </div>
@@ -127,7 +127,7 @@ const Earn = () => {
           <div className="flex justify-center lg:justify-end w-full lg:w-1/2">
             <img
               src={invite}
-              alt="PaintPal for Nonprofits"
+              alt="Huecrib for Nonprofits"
               className="max-w-[280px] lg:max-w-[300px] w-full h-auto rounded-lg"
             />
           </div>

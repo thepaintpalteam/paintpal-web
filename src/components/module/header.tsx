@@ -35,7 +35,7 @@ const Header = () => {
       <div className="flex items-center justify-center lg:max-w-[1300px] lg:mx-auto ">
         <img
           src={header}
-          alt="PaintPal header"
+          alt="Huecrib header"
           className="lg:w-[1200px] h-auto rounded-lg object-cover"
         />
       </div>
